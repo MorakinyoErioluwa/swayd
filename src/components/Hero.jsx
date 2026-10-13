@@ -8,7 +8,7 @@ function Hero() {
         md:min-h-[92vh] md:bg-center
       "
       style={{
-        backgroundImage: "url('/src/assets/image3.png')",
+        backgroundImage: "url('/hero.png')",
       }}
     >
       {/* Soft overlay */}
