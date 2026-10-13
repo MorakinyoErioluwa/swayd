@@ -4,17 +4,11 @@ import ScrollReveal from "./ScrollReveal";
 function Hero() {
   return (
     <section
-      className="relative
-        min-h-[74vh]
-        overflow-hidden
-        bg-cover
-        bg-[center_45%]
-        bg-no-repeat
-        md:min-h-[92vh]
-        md:bg-center
+      className="relative min-h-[74vh] overflow-hidden bg-cover bg-[center_45%] bg-no-repeat
+        md:min-h-[92vh] md:bg-center
       "
       style={{
-        backgroundImage: "url('/src/assets/hero.png')",
+        backgroundImage: "url('/src/assets/image3.png')",
       }}
     >
       {/* Soft overlay */}
