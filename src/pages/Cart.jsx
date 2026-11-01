@@ -17,23 +17,23 @@ function Cart() {
 
   if (cart.length === 0) {
     return (
-      <main className="min-h-screen bg-[var(--color-cream)] px-6 py-24 md:px-10">
+      <main className="min-h-screen bg-cream px-6 py-24 md:px-10">
         <div className="mx-auto max-w-xl text-center">
 
           <ScrollReveal delay={100}>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[var(--color-camel)]">
+            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
               Your SwayD bag
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <h1 className="mt-4 font-display text-5xl text-[var(--color-deep-brown)]">
+            <h1 className="mt-4 font-display text-5xl font-medium leading-none tracking-tight text-deep-brown">
               Your bag is empty
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={300}>
-            <p className="mt-5 text-sm leading-6 text-[var(--color-coffee)]">
+            <p className="mt-5 text-sm leading-6 text-coffee">
               Looks like you haven't added anything yet. Find something worth
               carrying.
             </p>
@@ -42,9 +42,7 @@ function Cart() {
           <ScrollReveal delay={400}>
             <Link
               to="/shop"
-              className="mt-8 inline-flex  items-center gap-4 rounded-md bg-[var(--color-coffee)] px-6 py-3.5 text-xs font-medium
-                uppercase  tracking-[0.14em] text-[var(--color-cream)] transition-all duration-300 hover:gap-5 hover:bg-[var(--color-deep-brown)]
-              "
+              className="mt-8 inline-flex items-center gap-3 rounded-md bg-coffee px-6 py-3 text-xs font-medium uppercase tracking-[0.14em] text-cream transition-colors duration-300 hover:bg-deep-brown"
             >
               Explore bags
               <span className="text-base">→</span>
@@ -57,19 +55,19 @@ function Cart() {
   }
 
   return (
-    <main className="min-h-screen bg-[var(--color-cream)] px-6 py-16 md:px-10 md:py-20 lg:px-12">
+    <main className="min-h-screen bg-cream px-6 py-16 md:px-10 md:py-20 lg:px-12">
       <div className="mx-auto max-w-7xl">
 
         {/* Page heading */}
         <div>
           <ScrollReveal delay={100}>
-            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-[var(--color-camel)] md:text-xs">
+            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
               Your SwayD bag
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <h1 className="mt-3 font-display text-5xl text-[var(--color-deep-brown)] md:text-6xl">
+            <h1 className="mt-3 font-display text-5xl font-medium leading-none tracking-tight text-deep-brown md:text-6xl">
               Your bag
             </h1>
           </ScrollReveal>
@@ -84,17 +82,17 @@ function Cart() {
                 key={item.id}
                 delay={300 + index * 100}
               >
-                <div className="flex gap-4 rounded-sm bg-[var(--color-beige)]/25 p-4 md:gap-6 md:p-5">
+                <div className="flex gap-4 rounded-sm bg-beige/25 p-4 md:gap-6 md:p-5">
 
                   {/* Product image */}
                   <Link
                     to={`/product/${item.id}`}
-                    className="h-32 w-24 shrink-0 overflow-hidden rounded-sm bg-[var(--color-beige)] md:h-40 md:w-32"
+                    className="group h-32 w-24 shrink-0 overflow-hidden rounded-sm bg-beige md:h-40 md:w-32"
                   >
                     <img
                       src={item.images[0]}
                       alt={item.title}
-                      className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </Link>
 
@@ -104,17 +102,17 @@ function Cart() {
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <Link to={`/product/${item.id}`}>
-                          <h2 className="text-sm font-medium text-[var(--color-deep-brown)] md:text-base">
+                          <h2 className="text-sm font-medium text-deep-brown md:text-base">
                             {item.title}
                           </h2>
                         </Link>
 
-                        <p className="mt-1 text-sm text-[var(--color-coffee)]">
+                        <p className="mt-1 text-sm text-coffee">
                           ${item.price}
                         </p>
                       </div>
 
-                      <p className="text-sm font-medium text-[var(--color-deep-brown)]">
+                      <p className="text-sm font-medium text-deep-brown">
                         ${(item.price * item.quantity).toFixed(2)}
                       </p>
                     </div>
@@ -122,7 +120,7 @@ function Cart() {
                     {/* Quantity + remove */}
                     <div className="mt-5 flex items-center justify-between gap-4">
 
-                      <div className="flex items-center rounded-md border border-[var(--color-beige)] bg-[var(--color-cream)]/50">
+                      <div className="flex items-center rounded-md border border-beige bg-cream/50">
                         <button
                           onClick={() =>
                             updateQuantity(
@@ -130,7 +128,7 @@ function Cart() {
                               Math.max(1, item.quantity - 1)
                             )
                           }
-                          className="px-3 py-2 text-sm text-[var(--color-deep-brown)] transition-colors hover:bg-[var(--color-beige)]/40"
+                          className="flex h-11 w-11 items-center justify-center text-lg text-deep-brown transition-colors hover:bg-beige/40"
                         >
                           −
                         </button>
@@ -146,7 +144,7 @@ function Cart() {
                               item.quantity + 1
                             )
                           }
-                          className="px-3 py-2 text-sm text-[var(--color-deep-brown)] transition-colors hover:bg-[var(--color-beige)]/40"
+                          className="flex h-11 w-11 items-center justify-center text-lg text-deep-brown transition-colors hover:bg-beige/40"
                         >
                           +
                         </button>
@@ -154,7 +152,7 @@ function Cart() {
 
                       <button
                         onClick={() => removeFromCart(item.id)}
-                        className="text-xs uppercase tracking-[0.12em] text-[var(--color-coffee)]/70 transition-colors hover:text-[var(--color-deep-brown)]"
+                        className="text-xs uppercase tracking-[0.12em] text-coffee/70 transition-colors hover:text-deep-brown"
                       >
                         Remove
                       </button>
@@ -168,32 +166,29 @@ function Cart() {
 
           {/* Order summary */}
           <ScrollReveal delay={400}>
-            <aside className="bg-[var(--color-beige)]/40 p-6 md:p-8">
+            <aside className="rounded-sm bg-beige/40 p-6 md:p-8">
 
-              <h2 className="font-display text-3xl text-[var(--color-deep-brown)]">
+              <h2 className="font-display text-3xl font-medium text-deep-brown">
                 Summary
               </h2>
 
               <div className="mt-8 flex items-center justify-between text-sm">
-                <span className="text-[var(--color-coffee)]">
+                <span className="text-coffee">
                   Subtotal
                 </span>
 
-                <span className="font-medium text-[var(--color-deep-brown)]">
+                <span className="font-medium text-deep-brown">
                   ${subtotal.toFixed(2)}
                 </span>
               </div>
 
-              <p className="mt-5 text-xs leading-5 text-[var(--color-coffee)]/70">
+              <p className="mt-5 text-xs leading-5 text-coffee/70">
                 Shipping and taxes will be calculated at checkout.
               </p>
 
               <Link
                 to="/checkout"
-                className="mt-8 flex w-full items-center justify-between  rounded-md  bg-[var(--color-coffee)] px-5  py-3.5  text-xs
-                  font-medium uppercase tracking-[0.14em] text-[var(--color-cream)] transition-all duration-300 hover:gap-2
-                  hover:bg-[var(--color-deep-brown)]
-                "
+                className="mt-8 flex w-full items-center justify-between rounded-md bg-coffee px-6 py-3 text-xs font-medium uppercase tracking-[0.14em] text-cream transition-colors duration-300 hover:bg-deep-brown"
               >
                 <span>Proceed to checkout</span>
                 <span className="text-base">→</span>
@@ -201,7 +196,7 @@ function Cart() {
 
               <Link
                 to="/shop"
-                className="mt-5 block text-center text-xs uppercase tracking-[0.12em] text-[var(--color-coffee)] transition-opacity hover:opacity-60"
+                className="mt-5 block text-center text-xs uppercase tracking-[0.12em] text-coffee transition-opacity hover:opacity-60"
               >
                 Continue shopping
               </Link>

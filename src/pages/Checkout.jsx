@@ -40,29 +40,29 @@ function Checkout() {
 
   if (orderPlaced) {
     return (
-      <main className="min-h-screen bg-[var(--color-cream)] px-6 py-24">
+      <main className="min-h-screen bg-cream px-6 py-24">
         <div className="mx-auto max-w-xl text-center">
 
           <ScrollReveal delay={100}>
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-beige)] text-xl text-[var(--color-deep-brown)]">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-beige text-xl text-deep-brown">
               ✓
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <p className="mt-8 text-[10px] uppercase tracking-[0.3em] text-[var(--color-camel)]">
+            <p className="mt-8 text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
               Thank you
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={300}>
-            <h1 className="mt-4 font-display text-5xl text-[var(--color-deep-brown)]">
+            <h1 className="mt-4 font-display text-5xl font-medium leading-none tracking-tight text-deep-brown">
               Order placed successfully
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={400}>
-            <p className="mt-5 text-sm leading-6 text-[var(--color-coffee)]">
+            <p className="mt-5 text-sm leading-6 text-coffee">
               Thank you for shopping with SwayD. Your order has been received.
             </p>
           </ScrollReveal>
@@ -70,25 +70,7 @@ function Checkout() {
           <ScrollReveal delay={500}>
             <Link
               to="/shop"
-              className="
-                mt-8
-                inline-flex
-                items-center
-                gap-4
-                rounded-md
-                bg-[var(--color-coffee)]
-                px-6
-                py-3.5
-                text-xs
-                font-medium
-                uppercase
-                tracking-[0.14em]
-                text-[var(--color-cream)]
-                transition-all
-                duration-300
-                hover:gap-5
-                hover:bg-[var(--color-deep-brown)]
-              "
+              className="mt-8 inline-flex items-center gap-3 rounded-md bg-coffee px-6 py-3 text-xs font-medium uppercase tracking-[0.14em] text-cream transition-colors duration-300 hover:bg-deep-brown"
             >
               Continue shopping
               <span className="text-base">→</span>
@@ -102,23 +84,23 @@ function Checkout() {
 
   if (cart.length === 0) {
     return (
-      <main className="min-h-screen bg-[var(--color-cream)] px-6 py-24">
+      <main className="min-h-screen bg-cream px-6 py-24">
         <div className="mx-auto max-w-xl text-center">
 
           <ScrollReveal delay={100}>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[var(--color-camel)]">
+            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
               Checkout
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <h1 className="mt-4 font-display text-5xl text-[var(--color-deep-brown)]">
+            <h1 className="mt-4 font-display text-5xl font-medium leading-none tracking-tight text-deep-brown">
               Your bag is empty
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={300}>
-            <p className="mt-5 text-sm leading-6 text-[var(--color-coffee)]">
+            <p className="mt-5 text-sm leading-6 text-coffee">
               Add something to your bag before continuing to checkout.
             </p>
           </ScrollReveal>
@@ -126,25 +108,7 @@ function Checkout() {
           <ScrollReveal delay={400}>
             <Link
               to="/shop"
-              className="
-                mt-8
-                inline-flex
-                items-center
-                gap-4
-                rounded-md
-                bg-[var(--color-coffee)]
-                px-6
-                py-3.5
-                text-xs
-                font-medium
-                uppercase
-                tracking-[0.14em]
-                text-[var(--color-cream)]
-                transition-all
-                duration-300
-                hover:gap-5
-                hover:bg-[var(--color-deep-brown)]
-              "
+              className="mt-8 inline-flex items-center gap-3 rounded-md bg-coffee px-6 py-3 text-xs font-medium uppercase tracking-[0.14em] text-cream transition-colors duration-300 hover:bg-deep-brown"
             >
               Shop bags
               <span className="text-base">→</span>
@@ -157,19 +121,19 @@ function Checkout() {
   }
 
   return (
-    <main className="min-h-screen bg-[var(--color-cream)] px-6 py-16 md:px-10 md:py-20 lg:px-12">
+    <main className="min-h-screen bg-cream px-6 py-16 md:px-10 md:py-20 lg:px-12">
       <div className="mx-auto max-w-6xl">
 
         {/* Heading */}
         <div>
           <ScrollReveal delay={100}>
-            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-[var(--color-camel)] md:text-xs">
+            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
               SwayD Checkout
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <h1 className="mt-3 font-display text-5xl text-[var(--color-deep-brown)] md:text-6xl">
+            <h1 className="mt-3 font-display text-5xl font-medium leading-none tracking-tight text-deep-brown md:text-6xl">
               Complete your order
             </h1>
           </ScrollReveal>
@@ -186,14 +150,14 @@ function Checkout() {
             <ScrollReveal delay={300}>
               <div className="py-8">
 
-                <h2 className="font-display text-3xl text-[var(--color-deep-brown)]">
+                <h2 className="font-display text-3xl font-medium text-deep-brown">
                   Delivery details
                 </h2>
 
                 <div className="mt-8 grid gap-5 md:grid-cols-2">
 
                   <div className="md:col-span-2">
-                    <label className="text-xs uppercase tracking-[0.12em] text-[var(--color-coffee)]">
+                    <label className="text-xs uppercase tracking-[0.12em] text-coffee">
                       Full name
                     </label>
 
@@ -203,62 +167,62 @@ function Checkout() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="mt-2 w-full rounded-md border border-[var(--color-beige)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
+                      className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
                     />
                   </div>
 
                   <div>
-                    <label className="text-xs uppercase tracking-[0.12em] text-[var(--color-coffee)]">
+                    <label className="text-xs uppercase tracking-[0.12em] text-coffee">
                       Email
                     </label>
 
                     <input
                       type="email" name="email" value={formData.email} onChange={handleChange} required
-                      className="mt-2 w-full rounded-md border border-[var(--color-beige)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
+                      className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
                     />
                   </div>
 
                   <div>
-                    <label className="text-xs uppercase tracking-[0.12em] text-[var(--color-coffee)]">
+                    <label className="text-xs uppercase tracking-[0.12em] text-coffee">
                       Phone
                     </label>
 
                     <input
-                      type="tel" name="phone"  value={formData.phone} onChange={handleChange} required
-                      className="mt-2 w-full rounded-md border border-[var(--color-beige)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
+                      type="tel" name="phone" value={formData.phone} onChange={handleChange} required
+                      className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
                     />
                   </div>
 
                   <div className="md:col-span-2">
-                    <label className="text-xs uppercase tracking-[0.12em] text-[var(--color-coffee)]">
+                    <label className="text-xs uppercase tracking-[0.12em] text-coffee">
                       Address
                     </label>
 
                     <input
-                      type="text"  name="address" value={formData.address}  onChange={handleChange} required
-                      className="mt-2 w-full rounded-md border border-[var(--color-beige)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
+                      type="text" name="address" value={formData.address} onChange={handleChange} required
+                      className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
                     />
                   </div>
 
                   <div>
-                    <label className="text-xs uppercase tracking-[0.12em] text-[var(--color-coffee)]">
+                    <label className="text-xs uppercase tracking-[0.12em] text-coffee">
                       City
                     </label>
 
                     <input
                       type="text" name="city" value={formData.city} onChange={handleChange} required
-                      className="mt-2 w-full rounded-md border border-[var(--color-beige)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
+                      className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
                     />
                   </div>
 
                   <div>
-                    <label className="text-xs uppercase tracking-[0.12em] text-[var(--color-coffee)]">
+                    <label className="text-xs uppercase tracking-[0.12em] text-coffee">
                       State
                     </label>
 
                     <input
                       type="text" name="state" value={formData.state} onChange={handleChange} required
-                      className="mt-2 w-full rounded-md border border-[var(--color-beige)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
+                      className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
                     />
                   </div>
 
@@ -269,12 +233,12 @@ function Checkout() {
 
             {/* Demo payment notice */}
             <ScrollReveal delay={400}>
-              <div className="mt-6 bg-[var(--color-beige)]/40 p-5">
-                <p className="text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-deep-brown)]">
+              <div className="rounded-sm bg-beige/40 p-5">
+                <p className="text-xs font-medium uppercase tracking-[0.12em] text-deep-brown">
                   Demo checkout
                 </p>
 
-                <p className="mt-2 text-xs leading-5 text-[var(--color-coffee)]/75">
+                <p className="mt-2 text-xs leading-5 text-coffee/75">
                   This is a frontend demo. No real payment will be processed.
                 </p>
               </div>
@@ -284,9 +248,9 @@ function Checkout() {
 
           {/* Order summary */}
           <ScrollReveal delay={350}>
-            <aside className="h-fit bg-[var(--color-deep-brown)] p-6 text-[var(--color-cream)] md:p-8">
+            <aside className="h-fit rounded-sm bg-beige/40 p-6 md:p-8">
 
-              <h2 className="font-display text-3xl">
+              <h2 className="font-display text-3xl font-medium text-deep-brown">
                 Your order
               </h2>
 
@@ -297,29 +261,29 @@ function Checkout() {
                     className="flex items-start justify-between gap-4"
                   >
                     <div>
-                      <p className="text-sm">
+                      <p className="text-sm text-deep-brown">
                         {item.title}
                       </p>
 
-                      <p className="mt-1 text-xs text-[var(--color-beige)]/70">
+                      <p className="mt-1 text-xs text-coffee/70">
                         Qty {item.quantity}
                       </p>
                     </div>
 
-                    <p className="text-sm">
+                    <p className="text-sm text-deep-brown">
                       ${(item.price * item.quantity).toFixed(2)}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 pt-2">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-[var(--color-beige)]/75">
+              <div className="mt-8 border-t border-beige pt-5">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-coffee">
                     Subtotal
                   </span>
 
-                  <span className="font-medium">
+                  <span className="font-medium text-deep-brown">
                     ${subtotal.toFixed(2)}
                   </span>
                 </div>
@@ -327,10 +291,7 @@ function Checkout() {
 
               <button
                 type="submit"
-                className=" mt-8 flex w-full items-center justify-between  rounded-md bg-[var(--color-cream)]  px-5
-                  py-3.5 text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-deep-brown)] transition-all
-                  duration-300 hover:gap-2 hover:bg-[var(--color-beige)]
-                "
+                className="mt-8 flex w-full items-center justify-between rounded-md bg-coffee px-6 py-3 text-xs font-medium uppercase tracking-[0.14em] text-cream transition-colors duration-300 hover:bg-deep-brown"
               >
                 <span>Place order</span>
                 <span className="text-base">→</span>

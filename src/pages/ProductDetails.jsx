@@ -35,23 +35,29 @@ function ProductDetails() {
 
     if (!product) {
         return (
-            <main className="min-h-screen bg-[var(--color-cream)] px-6 py-20 md:px-10">
+            <main className="min-h-screen bg-cream px-6 py-16 md:px-10 md:py-20 lg:px-12">
                 <div className="mx-auto max-w-7xl">
-                    <p className="text-sm text-[var(--color-coffee)]">
-                        Loading product...
+
+                    <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
+                        SwayD Collection
                     </p>
+
+                    <h1 className="mt-3 font-display text-5xl font-medium leading-none tracking-tight text-deep-brown md:text-6xl">
+                        {`Loading product...`}
+                    </h1>
+
                 </div>
             </main>
         );
     }
 
     return (
-        <main className="min-h-screen bg-[var(--color-cream)] px-6 py-12 md:px-10 md:py-16 lg:px-12">
+        <main className="min-h-screen bg-cream px-6 py-16 md:px-10 md:py-20 lg:px-12">
             <div className="mx-auto max-w-7xl">
 
                 {/* Breadcrumb */}
                 <ScrollReveal delay={100}>
-                    <nav className="mb-8 text-xs text-[var(--color-coffee)]/70">
+                    <nav className="mb-8 text-xs text-coffee/70">
                         <Link
                             to="/"
                             className="transition-opacity hover:opacity-60"
@@ -70,7 +76,7 @@ function ProductDetails() {
 
                         <span className="mx-2">/</span>
 
-                        <span className="text-[var(--color-deep-brown)]">
+                        <span className="text-deep-brown">
                             {product.title}
                         </span>
                     </nav>
@@ -81,12 +87,11 @@ function ProductDetails() {
 
                     {/* Product image */}
                     <ScrollReveal delay={200}>
-                        <div className="aspect-[4/5] overflow-hidden rounded-sm bg-[var(--color-beige)]">
+                        <div className="group aspect-[4/5] overflow-hidden rounded-sm bg-beige">
                             <img
                                 src={product.images[0]}
                                 alt={product.title}
-                                className="h-full w-full object-cover transition-transform duration-700 hover:scale-105
-                                "
+                                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                         </div>
                     </ScrollReveal>
@@ -95,32 +100,32 @@ function ProductDetails() {
                     <div className="flex flex-col justify-center">
 
                         <ScrollReveal delay={300}>
-                            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-[var(--color-camel)]">
+                            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel">
                                 SwayD Collection
                             </p>
                         </ScrollReveal>
 
                         <ScrollReveal delay={400}>
-                            <h1 className="mt-3 font-display text-4xl font-medium leading-tight tracking-tight text-[var(--color-deep-brown)] md:text-5xl lg:text-6xl">
+                            <h1 className="mt-3 font-display text-4xl font-medium leading-none tracking-tight text-deep-brown md:text-5xl lg:text-6xl">
                                 {product.title}
                             </h1>
                         </ScrollReveal>
 
                         <ScrollReveal delay={500}>
-                            <p className="mt-5 text-lg text-[var(--color-coffee)]">
+                            <p className="mt-5 text-lg text-coffee">
                                 ${product.price}
                             </p>
                         </ScrollReveal>
 
                         <ScrollReveal delay={600}>
-                            <p className="mt-7 max-w-xl text-sm leading-7 text-[var(--color-coffee)]/85 md:text-base">
+                            <p className="mt-7 max-w-xl text-sm leading-7 text-coffee/85 md:text-base">
                                 {product.description}
                             </p>
                         </ScrollReveal>
 
                         {/* Product details */}
                         <ScrollReveal delay={700}>
-                            <div className="mt-7 space-y-2 text-xs text-[var(--color-coffee)]/75">
+                            <div className="mt-7 space-y-2 text-xs text-coffee/75">
                                 <p>
                                     Rating: {product.rating}
                                 </p>
@@ -137,11 +142,11 @@ function ProductDetails() {
                         <ScrollReveal delay={800}>
                             <div className="mt-8">
 
-                                <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-coffee)]">
+                                <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.2em] text-coffee">
                                     Quantity
                                 </p>
 
-                                <div className="flex w-fit items-center rounded-md border border-[var(--color-beige)] bg-[var(--color-cream)]">
+                                <div className="flex w-fit items-center rounded-md border border-beige bg-cream">
 
                                     <button
                                         type="button"
@@ -150,7 +155,7 @@ function ProductDetails() {
                                                 Math.max(1, quantity - 1)
                                             )
                                         }
-                                        className="flex h-11 w-11 items-center justify-center text-lg text-[var(--color-deep-brown)] transition-colors hover:bg-[var(--color-beige)]/40"
+                                        className="flex h-11 w-11 items-center justify-center text-lg text-deep-brown transition-colors hover:bg-beige/40"
                                         aria-label="Decrease quantity"
                                     >
                                         −
@@ -165,7 +170,7 @@ function ProductDetails() {
                                         onClick={() =>
                                             setQuantity(quantity + 1)
                                         }
-                                        className="flex h-11 w-11 items-center justify-center text-lg text-[var(--color-deep-brown)] transition-colors hover:bg-[var(--color-beige)]/40"
+                                        className="flex h-11 w-11 items-center justify-center text-lg text-deep-brown transition-colors hover:bg-beige/40"
                                         aria-label="Increase quantity"
                                     >
                                         +
@@ -180,11 +185,7 @@ function ProductDetails() {
                             <button
                                 type="button"
                                 onClick={handleAddToCart}
-                                className="
-                                    mt-6 flex  w-full items-center justify-between rounded-md  bg-[var(--color-coffee)]
-                                    px-5 py-4 text-xs font-medium uppercase  tracking-[0.14em] text-[var(--color-cream)]
-                                    transition-all duration-300 hover:bg-[var(--color-deep-brown)]
-                                "
+                                className="mt-6 flex w-full items-center justify-between rounded-md bg-coffee px-6 py-3 text-xs font-medium uppercase tracking-[0.14em] text-cream transition-colors duration-300 hover:bg-deep-brown"
                             >
                                 <span>
                                     {addedToCart
@@ -205,12 +206,12 @@ function ProductDetails() {
                 <div className="mt-24 grid gap-10 md:grid-cols-3 md:gap-12">
 
                     <ScrollReveal delay={100}>
-                        <div>
-                            <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-[var(--color-camel)]">
+                        <div className="border-t border-beige pt-6">
+                            <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-camel">
                                 Materials
                             </p>
 
-                            <p className="mt-4 text-sm leading-6 text-[var(--color-coffee)]">
+                            <p className="mt-4 text-sm leading-6 text-coffee">
                                 Thoughtfully designed pieces made for everyday
                                 use and effortless style.
                             </p>
@@ -218,12 +219,12 @@ function ProductDetails() {
                     </ScrollReveal>
 
                     <ScrollReveal delay={200}>
-                        <div>
-                            <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-[var(--color-camel)]">
+                        <div className="border-t border-beige pt-6">
+                            <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-camel">
                                 Care
                             </p>
 
-                            <p className="mt-4 text-sm leading-6 text-[var(--color-coffee)]">
+                            <p className="mt-4 text-sm leading-6 text-coffee">
                                 Store your bag in a cool, dry place and avoid
                                 prolonged exposure to moisture.
                             </p>
@@ -231,12 +232,12 @@ function ProductDetails() {
                     </ScrollReveal>
 
                     <ScrollReveal delay={300}>
-                        <div>
-                            <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-[var(--color-camel)]">
+                        <div className="border-t border-beige pt-6">
+                            <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-camel">
                                 Shipping & Returns
                             </p>
 
-                            <p className="mt-4 text-sm leading-6 text-[var(--color-coffee)]">
+                            <p className="mt-4 text-sm leading-6 text-coffee">
                                 Shipping details and return information will be
                                 provided during checkout.
                             </p>
