@@ -13,19 +13,19 @@ function FeaturedProducts({ products }) {
         <div className="mx-auto mb-12 max-w-2xl text-center">
 
           <ScrollReveal delay={100}>
-            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-[var(--color-camel)] md:text-xs">
+            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
               Featured collection
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <h2 className="mt-3 font-display text-4xl font-medium leading-none tracking-tight text-[var(--color-deep-brown)] md:text-5xl">
+            <h2 className="mt-3 font-display text-4xl font-medium leading-none tracking-tight text-deep-brown md:text-5xl">
               Pieces worth carrying
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={300}>
-            <p className="mx-auto mt-4 max-w-lg text-sm leading-6 text-[var(--color-coffee)]/80">
+            <p className="mx-auto mt-4 max-w-lg text-sm leading-6 text-coffee/80">
               A few of our pieces designed for everyday movement, effortless
               style, and everything you carry along the way.
             </p>
@@ -50,20 +50,7 @@ function FeaturedProducts({ products }) {
           <div className="mt-14 text-center">
             <Link
               to="/shop"
-              className="
-                inline-flex
-                items-center
-                gap-2
-                text-xs
-                font-medium
-                uppercase
-                tracking-[0.14em]
-                text-[var(--color-deep-brown)]
-                transition-all
-                duration-300
-                hover:gap-3
-                hover:opacity-60
-              "
+              className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.14em] text-deep-brown transition-all duration-300 hover:gap-3 hover:opacity-60"
             >
               View all pieces
               <span>→</span>

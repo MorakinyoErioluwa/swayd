@@ -26,26 +26,26 @@ function Categories({ products }) {
   ];
 
   return (
-    <section className="bg-[var(--color-deep-brown)] px-6 py-24 text-[var(--color-cream)] md:px-10 md:py-28 lg:px-12">
+    <section className="bg-deep-brown px-6 py-24 text-cream md:px-10 md:py-28 lg:px-12">
       <div className="mx-auto max-w-7xl">
 
         {/* Section heading */}
         <div className="mx-auto mb-12 max-w-2xl text-center">
 
           <ScrollReveal delay={100}>
-            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-[var(--color-camel)] md:text-xs">
+            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
               Explore the collection
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <h2 className="mt-3 font-display text-4xl font-medium leading-none md:text-5xl">
+            <h2 className="mt-3 font-display text-4xl font-medium leading-none tracking-tight md:text-5xl">
               Find your everyday shape
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={300}>
-            <p className="mx-auto mt-4 max-w-lg text-sm leading-6 text-[var(--color-cream)]/70">
+            <p className="mx-auto mt-4 max-w-lg text-sm leading-6 text-cream/70">
               From roomy totes to smaller everyday pieces, find a shape that
               fits the way you move.
             </p>
@@ -64,7 +64,7 @@ function Categories({ products }) {
                 to="/shop"
                 className="group block"
               >
-                <div className="relative min-h-[280px] overflow-hidden rounded-sm bg-[var(--color-beige)] md:min-h-[360px]">
+                <div className="relative min-h-[280px] overflow-hidden rounded-sm bg-beige md:min-h-[360px]">
 
                   <img
                     src={category.image}
@@ -83,12 +83,12 @@ function Categories({ products }) {
                   />
 
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-[var(--color-deep-brown)]/35 transition-colors duration-500 group-hover:bg-[var(--color-deep-brown)]/45" />
+                  <div className="absolute inset-0 bg-deep-brown/35 md:bg-deep-brown/30" />
 
                   {/* Content */}
                   <div className="relative z-10 flex min-h-[280px] flex-col justify-between p-6 md:min-h-[360px] md:p-8">
 
-                    <span className="text-[10px] uppercase tracking-[0.25em] text-[var(--color-cream)]/70">
+                    <span className="text-[10px] uppercase tracking-[0.25em] text-cream/70">
                       0{index + 1}
                     </span>
 
@@ -98,7 +98,7 @@ function Categories({ products }) {
                       </h3>
 
                       <div className="mt-3 flex items-end justify-between gap-5">
-                        <p className="max-w-xs text-xs leading-5 text-[var(--color-cream)]/80 md:text-sm">
+                        <p className="max-w-xs text-xs leading-5 text-cream/80 md:text-sm">
                           {category.description}
                         </p>
 
