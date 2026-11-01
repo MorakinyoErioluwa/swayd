@@ -44,7 +44,7 @@ function Checkout() {
         <div className="mx-auto max-w-xl text-center">
 
           <ScrollReveal delay={100}>
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-biege)] text-xl text-[var(--color-deep-brown)]">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-beige)] text-xl text-[var(--color-deep-brown)]">
               ✓
             </div>
           </ScrollReveal>
@@ -203,7 +203,7 @@ function Checkout() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="mt-2 w-full rounded-md border border-[var(--color-biege)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
+                      className="mt-2 w-full rounded-md border border-[var(--color-beige)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
                     />
                   </div>
 
@@ -214,7 +214,7 @@ function Checkout() {
 
                     <input
                       type="email" name="email" value={formData.email} onChange={handleChange} required
-                      className="mt-2 w-full rounded-md border border-[var(--color-biege)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
+                      className="mt-2 w-full rounded-md border border-[var(--color-beige)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
                     />
                   </div>
 
@@ -225,7 +225,7 @@ function Checkout() {
 
                     <input
                       type="tel" name="phone"  value={formData.phone} onChange={handleChange} required
-                      className="mt-2 w-full rounded-md border border-[var(--color-biege)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
+                      className="mt-2 w-full rounded-md border border-[var(--color-beige)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
                     />
                   </div>
 
@@ -236,7 +236,7 @@ function Checkout() {
 
                     <input
                       type="text"  name="address" value={formData.address}  onChange={handleChange} required
-                      className="mt-2 w-full rounded-md border border-[var(--color-biege)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
+                      className="mt-2 w-full rounded-md border border-[var(--color-beige)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
                     />
                   </div>
 
@@ -247,7 +247,7 @@ function Checkout() {
 
                     <input
                       type="text" name="city" value={formData.city} onChange={handleChange} required
-                      className="mt-2 w-full rounded-md border border-[var(--color-biege)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
+                      className="mt-2 w-full rounded-md border border-[var(--color-beige)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
                     />
                   </div>
 
@@ -258,7 +258,7 @@ function Checkout() {
 
                     <input
                       type="text" name="state" value={formData.state} onChange={handleChange} required
-                      className="mt-2 w-full rounded-md border border-[var(--color-biege)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
+                      className="mt-2 w-full rounded-md border border-[var(--color-beige)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--color-camel)]"
                     />
                   </div>
 
@@ -269,7 +269,7 @@ function Checkout() {
 
             {/* Demo payment notice */}
             <ScrollReveal delay={400}>
-              <div className="mt-6 bg-[var(--color-biege)]/40 p-5">
+              <div className="mt-6 bg-[var(--color-beige)]/40 p-5">
                 <p className="text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-deep-brown)]">
                   Demo checkout
                 </p>
@@ -301,7 +301,7 @@ function Checkout() {
                         {item.title}
                       </p>
 
-                      <p className="mt-1 text-xs text-[var(--color-biege)]/70">
+                      <p className="mt-1 text-xs text-[var(--color-beige)]/70">
                         Qty {item.quantity}
                       </p>
                     </div>
@@ -315,7 +315,7 @@ function Checkout() {
 
               <div className="mt-8 pt-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-[var(--color-biege)]/75">
+                  <span className="text-sm text-[var(--color-beige)]/75">
                     Subtotal
                   </span>
 
@@ -329,7 +329,7 @@ function Checkout() {
                 type="submit"
                 className=" mt-8 flex w-full items-center justify-between  rounded-md bg-[var(--color-cream)]  px-5
                   py-3.5 text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-deep-brown)] transition-all
-                  duration-300 hover:gap-2 hover:bg-[var(--color-biege)]
+                  duration-300 hover:gap-2 hover:bg-[var(--color-beige)]
                 "
               >
                 <span>Place order</span>

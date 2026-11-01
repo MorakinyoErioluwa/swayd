@@ -84,12 +84,12 @@ function Cart() {
                 key={item.id}
                 delay={300 + index * 100}
               >
-                <div className="flex gap-4 rounded-sm bg-[var(--color-biege)]/25 p-4 md:gap-6 md:p-5">
+                <div className="flex gap-4 rounded-sm bg-[var(--color-beige)]/25 p-4 md:gap-6 md:p-5">
 
                   {/* Product image */}
                   <Link
                     to={`/product/${item.id}`}
-                    className="h-32 w-24 shrink-0 overflow-hidden rounded-sm bg-[var(--color-biege)] md:h-40 md:w-32"
+                    className="h-32 w-24 shrink-0 overflow-hidden rounded-sm bg-[var(--color-beige)] md:h-40 md:w-32"
                   >
                     <img
                       src={item.images[0]}
@@ -122,7 +122,7 @@ function Cart() {
                     {/* Quantity + remove */}
                     <div className="mt-5 flex items-center justify-between gap-4">
 
-                      <div className="flex items-center rounded-md border border-[var(--color-biege)] bg-[var(--color-cream)]/50">
+                      <div className="flex items-center rounded-md border border-[var(--color-beige)] bg-[var(--color-cream)]/50">
                         <button
                           onClick={() =>
                             updateQuantity(
@@ -130,7 +130,7 @@ function Cart() {
                               Math.max(1, item.quantity - 1)
                             )
                           }
-                          className="px-3 py-2 text-sm text-[var(--color-deep-brown)] transition-colors hover:bg-[var(--color-biege)]/40"
+                          className="px-3 py-2 text-sm text-[var(--color-deep-brown)] transition-colors hover:bg-[var(--color-beige)]/40"
                         >
                           −
                         </button>
@@ -146,7 +146,7 @@ function Cart() {
                               item.quantity + 1
                             )
                           }
-                          className="px-3 py-2 text-sm text-[var(--color-deep-brown)] transition-colors hover:bg-[var(--color-biege)]/40"
+                          className="px-3 py-2 text-sm text-[var(--color-deep-brown)] transition-colors hover:bg-[var(--color-beige)]/40"
                         >
                           +
                         </button>
@@ -168,7 +168,7 @@ function Cart() {
 
           {/* Order summary */}
           <ScrollReveal delay={400}>
-            <aside className="bg-[var(--color-biege)]/40 p-6 md:p-8">
+            <aside className="bg-[var(--color-beige)]/40 p-6 md:p-8">
 
               <h2 className="font-display text-3xl text-[var(--color-deep-brown)]">
                 Summary

@@ -10,7 +10,7 @@ function ProductCard({ product }) {
     <article className="group flex h-full flex-col">
       {/* Product image */}
       <Link to={`/product/${product.id}`} className="block">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-[var(--color-biege)]">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-[var(--color-beige)]">
           <img
             src={product.images[0]}
             alt={product.title}

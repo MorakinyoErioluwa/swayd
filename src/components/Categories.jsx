@@ -64,7 +64,7 @@ function Categories({ products }) {
                 to="/shop"
                 className="group block"
               >
-                <div className="relative min-h-[280px] overflow-hidden rounded-sm bg-[var(--color-biege)] md:min-h-[360px]">
+                <div className="relative min-h-[280px] overflow-hidden rounded-sm bg-[var(--color-beige)] md:min-h-[360px]">
 
                   <img
                     src={category.image}

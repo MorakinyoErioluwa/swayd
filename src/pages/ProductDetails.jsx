@@ -81,7 +81,7 @@ function ProductDetails() {
 
                     {/* Product image */}
                     <ScrollReveal delay={200}>
-                        <div className="aspect-[4/5] overflow-hidden rounded-sm bg-[var(--color-biege)]">
+                        <div className="aspect-[4/5] overflow-hidden rounded-sm bg-[var(--color-beige)]">
                             <img
                                 src={product.images[0]}
                                 alt={product.title}
@@ -141,7 +141,7 @@ function ProductDetails() {
                                     Quantity
                                 </p>
 
-                                <div className="flex w-fit items-center rounded-md border border-[var(--color-biege)] bg-[var(--color-cream)]">
+                                <div className="flex w-fit items-center rounded-md border border-[var(--color-beige)] bg-[var(--color-cream)]">
 
                                     <button
                                         type="button"
@@ -150,7 +150,7 @@ function ProductDetails() {
                                                 Math.max(1, quantity - 1)
                                             )
                                         }
-                                        className="flex h-11 w-11 items-center justify-center text-lg text-[var(--color-deep-brown)] transition-colors hover:bg-[var(--color-biege)]/40"
+                                        className="flex h-11 w-11 items-center justify-center text-lg text-[var(--color-deep-brown)] transition-colors hover:bg-[var(--color-beige)]/40"
                                         aria-label="Decrease quantity"
                                     >
                                         −
@@ -165,7 +165,7 @@ function ProductDetails() {
                                         onClick={() =>
                                             setQuantity(quantity + 1)
                                         }
-                                        className="flex h-11 w-11 items-center justify-center text-lg text-[var(--color-deep-brown)] transition-colors hover:bg-[var(--color-biege)]/40"
+                                        className="flex h-11 w-11 items-center justify-center text-lg text-[var(--color-deep-brown)] transition-colors hover:bg-[var(--color-beige)]/40"
                                         aria-label="Increase quantity"
                                     >
                                         +

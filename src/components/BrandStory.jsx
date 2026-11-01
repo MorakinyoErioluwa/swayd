@@ -74,7 +74,7 @@ function BrandStory() {
 
           {/* Brand visual */}
           <ScrollReveal delay={200}>
-            <div className="relative min-h-[420px] overflow-hidden bg-[var(--color-biege)] md:min-h-[520px]">
+            <div className="relative min-h-[420px] overflow-hidden bg-[var(--color-beige)] md:min-h-[520px]">
 
               
               <div className="relative z-10 flex min-h-[420px] items-center justify-center p-10 text-center md:min-h-[520px] md:p-16">

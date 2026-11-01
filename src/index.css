@@ -5,12 +5,19 @@
 :root {
   --color-coffee: #3b2923;
   --color-cream: #f7f2ea;
-  --color-biege: #d8c7b0;
+  --color-beige: #d8c7b0;
   --color-camel: #b58b62;
   --color-deep-brown: #241914;
 }
 
 @theme {
+  /* SwayD palette */
+  --color-coffee: #3b2923;
+  --color-cream: #f7f2ea;
+  --color-beige: #d8c7b0;
+  --color-camel: #b58b62;
+  --color-deep-brown: #241914;
+
   /* SwayD uses two typefaces to create contrast.
      Cormorant gives the brand/editorial moments personality.
      DM Sans keeps the interface modern and easy to read. */
@@ -22,5 +29,5 @@ body {
   margin: 0;
   background-color: var(--color-cream);
   color: var(--color-deep-brown);
-  font-family: "DM Sans", sans-serif;
+  font-family: var(--font-sans);
 }

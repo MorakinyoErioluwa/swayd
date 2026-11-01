@@ -12,7 +12,7 @@ function Hero() {
       }}
     >
       {/* Soft overlay */}
-      <div className="absolute inset-0 bg-[var(--color-deep-brown)]/20"></div>
+      <div className="absolute inset-0 bg-deep-brown/30 md:bg-deep-brown/25"></div>
 
       {/* Hero content */}
       <div
@@ -31,11 +31,11 @@ function Hero() {
           md:py-24
         "
       >
-        <div className="max-w-3xl text-[var(--color-cream)]">
+        <div className="max-w-3xl text-cream">
 
           {/* Eyebrow */}
           <ScrollReveal delay={100}>
-            <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.3em] text-[var(--color-cream)]/90 md:mb-5 md:text-xs">
+            <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.3em] text-cream/90 md:mb-5 md:text-xs">
               The SwayD collection
             </p>
           </ScrollReveal>
@@ -49,7 +49,7 @@ function Hero() {
 
           {/* Description */}
           <ScrollReveal delay={300}>
-            <p className="mx-auto mt-5 max-w-md text-xs leading-6 text-[var(--color-cream)]/90 md:mt-7 md:max-w-lg md:text-base md:leading-7">
+            <p className="mx-auto mt-5 max-w-md text-xs leading-6 text-cream/90 md:mt-7 md:max-w-lg md:text-base md:leading-7">
               Contemporary bags designed for everyday movement, effortless
               style, and everything you carry along the way.
             </p>
@@ -61,14 +61,14 @@ function Hero() {
 
               <Link
                 to="/shop"
-                className="inline-flex items-center justify-center bg-[var(--color-cream)] px-6 py-3 text-xs font-medium text-[var(--color-deep-brown)] transition-colors hover:bg-[var(--color-biege)] md:px-7 md:py-3.5 md:text-sm"
+                className="inline-flex items-center justify-center rounded-md bg-cream px-6 py-3 text-xs font-medium text-deep-brown transition-colors hover:bg-beige md:px-7 md:py-3.5 md:text-sm"
               >
                 Shop the collection
               </Link>
 
               <a
                 href="#story"
-                className="inline-flex items-center justify-center border border-[var(--color-cream)]/80 px-6 py-3 text-xs font-medium text-[var(--color-cream)] transition-colors hover:bg-[var(--color-cream)]/10 md:px-7 md:py-3.5 md:text-sm"
+                className="inline-flex items-center justify-center rounded-md border border-cream/80 px-6 py-3 text-xs font-medium text-cream transition-colors hover:bg-cream/10 md:px-7 md:py-3.5 md:text-sm"
               >
                 Our story
               </a>

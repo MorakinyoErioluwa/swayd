@@ -16,7 +16,7 @@ function Footer() {
                 SwayD
               </p>
 
-              <p className="mt-4 max-w-sm text-sm leading-6 text-[var(--color-biege)]/75">
+              <p className="mt-4 max-w-sm text-sm leading-6 text-[var(--color-beige)]/75">
                 Contemporary bags designed with intention, warmth, and everyday
                 movement in mind.
               </p>
@@ -30,7 +30,7 @@ function Footer() {
                 Navigate
               </h3>
 
-              <nav className="mt-5 flex flex-col gap-3 text-sm text-[var(--color-biege)]/80">
+              <nav className="mt-5 flex flex-col gap-3 text-sm text-[var(--color-beige)]/80">
                 <Link
                   to="/"
                   className="transition-colors hover:text-[var(--color-cream)]"
@@ -62,7 +62,7 @@ function Footer() {
                 Shop
               </h3>
 
-              <nav className="mt-5 flex flex-col gap-3 text-sm text-[var(--color-biege)]/80">
+              <nav className="mt-5 flex flex-col gap-3 text-sm text-[var(--color-beige)]/80">
                 <Link
                   to="/shop"
                   className="transition-colors hover:text-[var(--color-cream)]"
@@ -92,7 +92,7 @@ function Footer() {
         {/* Copyright */}
         <ScrollReveal delay={400}>
           <div className="mt-14 pt-2">
-            <p className="text-xs text-[var(--color-biege)]/60">
+            <p className="text-xs text-[var(--color-beige)]/60">
               © {new Date().getFullYear()} SwayD. All rights reserved.
             </p>
           </div>

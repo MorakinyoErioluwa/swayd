@@ -145,7 +145,7 @@ function Shop() {
                 placeholder="Search bags..."
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
-                className="w-full rounded-md border border-[var(--color-biege)] bg-transparent px-4 py-3
+                className="w-full rounded-md border border-[var(--color-beige)] bg-transparent px-4 py-3
                   text-sm text-[var(--color-deep-brown)] outline-none transition placeholder:text-[var(--color-coffee)]/50
                   focus:border-[var(--color-camel)]
                 "
@@ -159,7 +159,7 @@ function Shop() {
                   w-full
                   rounded-md
                   border
-                  border-[var(--color-biege)]
+                  border-[var(--color-beige)]
                   bg-[var(--color-cream)]
                   px-4
                   py-3
@@ -186,7 +186,7 @@ function Shop() {
                   w-full
                   rounded-md
                   border
-                  border-[var(--color-biege)]
+                  border-[var(--color-beige)]
                   bg-[var(--color-cream)]
                   px-4
                   py-3
