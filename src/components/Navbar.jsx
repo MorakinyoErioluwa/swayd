@@ -1,10 +1,59 @@
-import { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { useState, useContext, useEffect, useRef } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import ScrollReveal from "./ScrollReveal";
 
+const desktopLinkClass = ({ isActive }) =>
+  `text-sm transition-colors ${
+    isActive ? "text-camel" : "text-coffee hover:text-camel"
+  }`;
+
+const mobileLinkClass = (isActive) =>
+  `font-display text-4xl font-medium tracking-tight transition-transform duration-300 hover:translate-x-2 ${
+    isActive ? "text-camel" : "text-deep-brown"
+  }`;
+
+function CartIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="h-6 w-6"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437m0 0L6.75 15.75a2.25 2.25 0 0 0 2.18 1.8h7.14a2.25 2.25 0 0 0 2.18-1.8l1.644-6.578H5.106m0 0L4.723 3.835M9 20.25h.008v.008H9v-.008Zm6 0h.008v.008H6v-.008Z"
+      />
+    </svg>
+  );
+}
+
+function CartLink({ totalItems, onClick }) {
+  return (
+    <Link
+      to="/cart"
+      onClick={onClick}
+      className="relative inline-flex items-center text-deep-brown transition-colors hover:text-camel"
+      aria-label="Shopping cart"
+    >
+      <CartIcon />
+
+      {totalItems > 0 && (
+        <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-deep-brown text-[10px] text-cream">
+          {totalItems}
+        </span>
+      )}
+    </Link>
+  );
+}
+
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navRef = useRef(null);
 
   const { cart } = useContext(CartContext);
 
@@ -17,8 +66,35 @@ function Navbar() {
     setIsMenuOpen(false);
   };
 
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+
+    const handleMouseDown = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("mousedown", handleMouseDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("mousedown", handleMouseDown);
+    };
+  }, [isMenuOpen]);
+
   return (
-    <nav className="relative z-50 bg-[var(--color-cream)]">
+    <nav
+      ref={navRef}
+      className="sticky top-0 z-50 border-b border-beige/60 bg-cream"
+    >
 
       {/* Main navbar */}
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-10 lg:px-12">
@@ -28,7 +104,7 @@ function Navbar() {
           <Link
             to="/"
             onClick={closeMenu}
-            className="text-2xl font-semibold tracking-tight text-[var(--color-deep-brown)]"
+            className="font-display text-3xl font-medium tracking-tight text-deep-brown"
           >
             SwayD
           </Link>
@@ -38,86 +114,37 @@ function Navbar() {
         <div className="hidden items-center gap-9 md:flex">
 
           <ScrollReveal delay={100}>
-            <Link
+            <NavLink
               to="/"
-              className="text-sm text-[var(--color-coffee)] transition-colors hover:text-[var(--color-camel)]"
+              end
+              className={desktopLinkClass}
             >
               Home
-            </Link>
+            </NavLink>
           </ScrollReveal>
 
           <ScrollReveal delay={150}>
-            <Link
+            <NavLink
               to="/shop"
-              className="text-sm text-[var(--color-coffee)] transition-colors hover:text-[var(--color-camel)]"
+              className={desktopLinkClass}
             >
               Shop
-            </Link>
+            </NavLink>
           </ScrollReveal>
 
-          {/* Desktop cart */}
+          {/* Cart */}
           <ScrollReveal delay={200}>
-            <Link
-              to="/cart"
-              className="relative inline-flex items-center text-[var(--color-deep-brown)]"
-              aria-label="Shopping cart"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="h-6 w-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437m0 0L6.75 15.75a2.25 2.25 0 0 0 2.18 1.8h7.14a2.25 2.25 0 0 0 2.18-1.8l1.644-6.578H5.106m0 0L4.723 3.835M9 20.25h.008v.008H9v-.008Zm6 0h.008v.008H6v-.008Z"
-                />
-              </svg>
-
-              {totalItems > 0 && (
-                <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-[var(--color-deep-brown)] text-[10px] text-[var(--color-cream)]">
-                  {totalItems}
-                </span>
-              )}
-            </Link>
+            <CartLink totalItems={totalItems} onClick={closeMenu} />
           </ScrollReveal>
 
         </div>
 
         {/* Mobile controls */}
-        <div className="flex items-center gap-5 md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
 
           {/* Mobile cart */}
           <ScrollReveal delay={100}>
-            <Link
-              to="/cart"
-              className="relative inline-flex items-center text-[var(--color-deep-brown)]"
-              aria-label="Shopping cart"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="h-6 w-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437m0 0L6.75 15.75a2.25 2.25 0 0 0 2.18 1.8h7.14a2.25 2.25 0 0 0 2.18-1.8l1.644-6.578H5.106m0 0L4.723 3.835M9 20.25h.008v.008H9v-.008Zm6 0h.008v.008H6v-.008Z"
-                />
-              </svg>
-
-              {totalItems > 0 && (
-                <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-[var(--color-deep-brown)] text-[10px] text-[var(--color-cream)]">
-                  {totalItems}
-                </span>
-              )}
-            </Link>
+            <CartLink totalItems={totalItems} onClick={closeMenu} />
           </ScrollReveal>
 
           {/* Menu button */}
@@ -125,11 +152,42 @@ function Navbar() {
             <button
               type="button"
               onClick={() => setIsMenuOpen((current) => !current)}
-              className="relative z-50 text-2xl text-[var(--color-deep-brown)]"
+              className="flex h-11 w-11 items-center justify-center text-deep-brown"
               aria-label="Toggle navigation menu"
               aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
-              {isMenuOpen ? "×" : "☰"}
+              {isMenuOpen ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+              )}
             </button>
           </ScrollReveal>
 
@@ -138,45 +196,51 @@ function Navbar() {
 
       {/* Mobile navigation panel */}
       <div
-        className={`absolute left-0 top-full w-full origin-left bg-[var(--color-cream)] md:hidden ${
+        id="mobile-menu"
+        aria-hidden={!isMenuOpen}
+        inert={!isMenuOpen}
+        className={`absolute left-0 top-full w-full border-b border-beige bg-cream shadow-sm md:hidden transition-all duration-300 ease-out ${
           isMenuOpen
-            ? "pointer-events-auto scale-x-100"
-            : "pointer-events-none scale-x-0"
-        } transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]`}
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-2 opacity-0"
+        }`}
       >
         <div className="px-6 py-10">
 
           <div className="flex flex-col gap-5">
 
-            <Link
+            <NavLink
               to="/"
+              end
               onClick={closeMenu}
-              className="font-display text-4xl font-medium tracking-tight text-[var(--color-deep-brown)] transition-transform duration-300 hover:translate-x-2"
+              className={({ isActive }) => mobileLinkClass(isActive)}
             >
               Home
-            </Link>
+            </NavLink>
 
-            <Link
+            <NavLink
               to="/shop"
               onClick={closeMenu}
-              className="font-display text-4xl font-medium tracking-tight text-[var(--color-deep-brown)] transition-transform duration-300 hover:translate-x-2"
+              className={({ isActive }) => mobileLinkClass(isActive)}
             >
               Shop
-            </Link>
+            </NavLink>
 
-            <Link
+            <NavLink
               to="/cart"
               onClick={closeMenu}
-              className="flex items-center gap-3 font-display text-4xl font-medium tracking-tight text-[var(--color-deep-brown)] transition-transform duration-300 hover:translate-x-2"
+              className={({ isActive }) =>
+                `flex items-center gap-3 ${mobileLinkClass(isActive)}`
+              }
             >
               <span>Cart</span>
 
               {totalItems > 0 && (
-                <span className="font-sans text-sm text-[var(--color-camel)]">
+                <span className="font-sans text-sm text-camel">
                   {totalItems}
                 </span>
               )}
-            </Link>
+            </NavLink>
 
           </div>
 
