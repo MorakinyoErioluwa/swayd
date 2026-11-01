@@ -9,8 +9,8 @@ const desktopLinkClass = ({ isActive }) =>
   }`;
 
 const mobileLinkClass = (isActive) =>
-  `font-display text-4xl font-medium tracking-tight transition-transform duration-300 hover:translate-x-2 ${
-    isActive ? "text-camel" : "text-deep-brown"
+  `font-display text-5xl font-medium tracking-tight transition-colors duration-300 ${
+    isActive ? "text-camel" : "text-cream hover:text-camel"
   }`;
 
 function CartIcon() {
@@ -69,6 +69,8 @@ function Navbar() {
   useEffect(() => {
     if (!isMenuOpen) return;
 
+    document.body.style.overflow = "hidden";
+
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         setIsMenuOpen(false);
@@ -85,6 +87,7 @@ function Navbar() {
     document.addEventListener("mousedown", handleMouseDown);
 
     return () => {
+      document.body.style.overflow = "";
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("mousedown", handleMouseDown);
     };
@@ -194,57 +197,55 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile navigation panel */}
+      {/* Mobile fullscreen menu */}
       <div
         id="mobile-menu"
         aria-hidden={!isMenuOpen}
         inert={!isMenuOpen}
-        className={`absolute left-0 top-full w-full border-b border-beige bg-cream shadow-sm md:hidden transition-all duration-300 ease-out ${
+        className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-2 bg-deep-brown px-6 text-cream transition-opacity duration-300 ease-out md:hidden ${
           isMenuOpen
-            ? "pointer-events-auto translate-y-0 opacity-100"
-            : "pointer-events-none -translate-y-2 opacity-0"
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
         }`}
       >
-        <div className="px-6 py-10">
 
-          <div className="flex flex-col gap-5">
+        <NavLink
+          to="/"
+          end
+          onClick={closeMenu}
+          className={({ isActive }) => mobileLinkClass(isActive)}
+        >
+          Home
+        </NavLink>
 
-            <NavLink
-              to="/"
-              end
-              onClick={closeMenu}
-              className={({ isActive }) => mobileLinkClass(isActive)}
-            >
-              Home
-            </NavLink>
+        <span className="h-px w-10 bg-camel/60" aria-hidden="true"></span>
 
-            <NavLink
-              to="/shop"
-              onClick={closeMenu}
-              className={({ isActive }) => mobileLinkClass(isActive)}
-            >
-              Shop
-            </NavLink>
+        <NavLink
+          to="/shop"
+          onClick={closeMenu}
+          className={({ isActive }) => mobileLinkClass(isActive)}
+        >
+          Shop
+        </NavLink>
 
-            <NavLink
-              to="/cart"
-              onClick={closeMenu}
-              className={({ isActive }) =>
-                `flex items-center gap-3 ${mobileLinkClass(isActive)}`
-              }
-            >
-              <span>Cart</span>
+        <span className="h-px w-10 bg-camel/60" aria-hidden="true"></span>
 
-              {totalItems > 0 && (
-                <span className="font-sans text-sm text-camel">
-                  {totalItems}
-                </span>
-              )}
-            </NavLink>
+        <NavLink
+          to="/cart"
+          onClick={closeMenu}
+          className={({ isActive }) =>
+            `flex items-center gap-4 ${mobileLinkClass(isActive)}`
+          }
+        >
+          <span>Cart</span>
 
-          </div>
+          {totalItems > 0 && (
+            <span className="font-sans text-sm tracking-normal text-camel">
+              {totalItems}
+            </span>
+          )}
+        </NavLink>
 
-        </div>
       </div>
     </nav>
   );
