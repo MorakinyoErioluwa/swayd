@@ -9,20 +9,20 @@ function ProductCard({ product }) {
   return (
     <article className="group flex h-full flex-col">
       {/* Product image */}
-      <Link to={`/product/${product.id}`} className="block">
-        <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-[var(--color-beige)]">
+      <Link
+        to={`/product/${product.id}`}
+        className="block"
+      >
+        <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-beige">
           <img
             src={product.images[0]}
             alt={product.title}
-            className=" h-full w-full object-cover transition-transform duration-700  ease-out  group-hover:scale-105
-            "
+            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
 
           {/* Appears when the product image is hovered */}
           <span
-            className="absolute bottom-4  left-4 bg-[var(--color-cream)]/95 px-3 py-2 text-[10px] font-medium  uppercase tracking-[0.15em]
-              text-[var(--color-deep-brown)] opacity-0 transition-opacity  duration-300  group-hover:opacity-100
-            "
+            className="absolute bottom-4 left-4 bg-cream/95 px-3 py-2 text-[10px] font-medium uppercase tracking-[0.15em] text-deep-brown opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           >
             View piece
           </span>
@@ -36,12 +36,12 @@ function ProductCard({ product }) {
             to={`/product/${product.id}`}
             className="min-w-0"
           >
-            <h3 className="text-sm font-medium leading-5 text-[var(--color-deep-brown)] transition-opacity hover:opacity-60 md:text-base">
+            <h3 className="text-sm font-medium leading-5 text-deep-brown transition-opacity hover:opacity-60 md:text-base">
               {product.title}
             </h3>
           </Link>
 
-          <p className="shrink-0 text-sm text-[var(--color-coffee)]">
+          <p className="shrink-0 text-sm text-coffee">
             ${product.price}
           </p>
         </div>
@@ -49,13 +49,11 @@ function ProductCard({ product }) {
         {/* Add to cart */}
         <button
           onClick={() => addToCart(product, 1)}
-          className="mt-auto flex w-full  items-center justify-between rounded-md bg-[var(--color-coffee)] px-4 py-3 text-xs font-medium
-            uppercase tracking-[0.12em] text-[var(--color-cream)] transition-all duration-300 hover:bg-[var(--color-deep-brown)]
-          "
+          className="group/btn mt-auto flex w-full items-center justify-between rounded-md bg-coffee px-6 py-3 text-xs font-medium uppercase tracking-[0.12em] text-cream transition-colors duration-300 hover:bg-deep-brown"
         >
           <span>Add to cart</span>
 
-          <span className="text-base transition-transform  duration-300  group-hover:translate-x-1">
+          <span className="text-base transition-transform duration-300 group-hover/btn:translate-x-1">
            →
           </span>
         </button>
