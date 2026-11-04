@@ -2,14 +2,6 @@
 
 @import "tailwindcss";
 
-:root {
-  --color-coffee: #3b2923;
-  --color-cream: #f7f2ea;
-  --color-beige: #d8c7b0;
-  --color-camel: #b58b62;
-  --color-deep-brown: #241914;
-}
-
 @theme {
   /* SwayD palette */
   --color-coffee: #3b2923;
