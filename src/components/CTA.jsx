@@ -22,7 +22,7 @@ function CTA() {
 
         {/* Description */}
         <ScrollReveal delay={300}>
-          <p className="mx-auto mt-5 max-w-lg text-sm leading-6 text-deep-brown/80 md:text-base">
+          <p className="mx-auto mt-5 max-w-lg text-sm leading-6 text-deep-brown md:text-base">
             Explore the SwayD collection and find a piece made to fit your
             everyday rhythm.
           </p>

@@ -115,7 +115,7 @@ function ProductDetails() {
                         </p>
 
                         {/* Product details */}
-                        <div className="mt-7 space-y-2 text-xs text-coffee/75">
+                        <div className="mt-7 space-y-2 text-xs text-coffee">
                             <p>
                                 Rating: {product.rating}
                             </p>

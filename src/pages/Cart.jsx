@@ -142,7 +142,7 @@ function Cart() {
 
                     <button
                       onClick={() => removeFromCart(item.id)}
-                      className="text-xs uppercase tracking-[0.12em] text-coffee/70 transition-colors hover:text-deep-brown"
+                      className="text-xs uppercase tracking-[0.12em] text-coffee transition-colors hover:underline"
                     >
                       Remove
                     </button>
@@ -171,7 +171,7 @@ function Cart() {
                 </span>
               </div>
 
-              <p className="mt-5 text-xs leading-5 text-coffee/70">
+              <p className="mt-5 text-xs leading-5 text-coffee/90">
                 Shipping and taxes will be calculated at checkout.
               </p>
 

@@ -242,7 +242,7 @@ function Checkout() {
                         {item.title}
                       </p>
 
-                      <p className="mt-1 text-xs text-coffee/70">
+                      <p className="mt-1 text-xs text-coffee/90">
                         Qty {item.quantity}
                       </p>
                     </div>
@@ -266,7 +266,7 @@ function Checkout() {
                 </div>
               </div>
 
-              <p className="mt-3 text-xs leading-5 text-coffee/70">
+              <p className="mt-3 text-xs leading-5 text-coffee/90">
                 Shipping: calculated after you place your order
               </p>
 

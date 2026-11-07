@@ -140,7 +140,7 @@ function Shop() {
             placeholder="Search bags..."
             value={searchTerm}
             onChange={(event) => setSearchTerm(event.target.value)}
-            className="w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors placeholder:text-coffee/50 focus:border-camel"
+            className="w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors placeholder:text-coffee/60 focus:border-camel"
           />
 
           {/* Category */}
