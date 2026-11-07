@@ -15,12 +15,12 @@ function ProductCard({ product }) {
         to={`/product/${product.id}`}
         className="block"
       >
-        <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-beige">
+        <div className="relative aspect-square overflow-hidden rounded-sm bg-beige md:aspect-[4/5]">
           <img
             src={product.images[0]}
             alt={product.title}
             onError={handleImageError}
-            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
           />
 
           {/* Appears when the product image is hovered */}
@@ -52,11 +52,11 @@ function ProductCard({ product }) {
         {/* Add to cart */}
         <button
           onClick={() => addToCart(product, 1)}
-          className="group/btn mt-auto flex w-full items-center justify-between rounded-md bg-coffee px-6 py-3 text-xs font-medium uppercase tracking-[0.12em] text-cream transition-colors duration-300 hover:bg-deep-brown"
+          className="group/btn mt-auto flex w-full items-center justify-between rounded-md bg-coffee px-4 py-2.5 text-xs font-medium uppercase tracking-[0.12em] text-cream transition-colors duration-300 hover:bg-deep-brown md:px-6 md:py-3"
         >
           <span>Add to cart</span>
 
-          <span className="text-base transition-transform duration-300 group-hover/btn:translate-x-1">
+          <span className="text-sm transition-transform duration-300 group-hover/btn:translate-x-1">
            →
           </span>
         </button>

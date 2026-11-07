@@ -83,15 +83,15 @@ function ProductDetails() {
                 </nav>
 
                 {/* Product */}
-                <div className="grid gap-10 md:grid-cols-2 md:gap-14 lg:gap-20">
+                <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-14 lg:gap-20">
 
                     {/* Product image */}
-                    <div className="group aspect-[4/5] overflow-hidden rounded-sm bg-beige">
+                    <div className="group aspect-[4/5] overflow-hidden rounded-sm bg-beige md:aspect-auto md:h-[55vh] md:max-h-[560px]">
                         <img
                             src={product.images[0]}
                             alt={product.title}
                             onError={handleImageError}
-                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                         />
                     </div>
 
@@ -171,7 +171,7 @@ function ProductDetails() {
                         <button
                             type="button"
                             onClick={handleAddToCart}
-                            className="mt-6 flex w-full items-center justify-between rounded-md bg-coffee px-6 py-3 text-xs font-medium uppercase tracking-[0.14em] text-cream transition-colors duration-300 hover:bg-deep-brown"
+                            className="mt-6 flex w-full items-center justify-between rounded-md bg-coffee px-6 py-3.5 text-xs font-medium uppercase tracking-[0.14em] text-cream transition-colors duration-300 hover:bg-deep-brown"
                         >
                             <span>
                                 {addedToCart
