@@ -6,7 +6,7 @@ export const products = [
     description:
       "A structured suede satchel with hand-finished edges and a softly lined interior. Made to keep its shape through years of daily carrying.",
     category: "Satchels",
-    images: ["/images/products/ife-satchel.webp"],
+    images: ["/images/products/ife-satchel.jpg"],
     rating: 4.8,
     stock: 6,
   },
@@ -17,7 +17,7 @@ export const products = [
     description:
       "Our deep-bucket silhouette in brushed suede with a single shoulder strap. Roomy without ever feeling bulky.",
     category: "Bucket Bags",
-    images: ["/images/products/tola-bucket-bag.webp"],
+    images: ["/images/products/tola-bucket-bag.jpg"],
     rating: 4.6,
     stock: 9,
   },
@@ -28,7 +28,7 @@ export const products = [
     description:
       "A relaxed hobo that slings comfortably over the shoulder and softens with every wear. Undone, easy, unmistakably suede.",
     category: "Hobo Bags",
-    images: ["/images/products/kemi-hobo-bag.webp"],
+    images: ["/images/products/kemi-hobo-bag.jpg"],
     rating: 4.5,
     stock: 12,
   },
@@ -39,7 +39,7 @@ export const products = [
     description:
       "A slim envelope clutch in fine suede, finished with a hidden magnetic closure. Small, sharp, evening-ready.",
     category: "Clutches",
-    images: ["/images/products/nia-envelope-clutch.webp"],
+    images: ["/images/products/nia-envelope-clutch.jpg"],
     rating: 4.7,
     stock: 18,
   },
@@ -50,7 +50,7 @@ export const products = [
     description:
       "The largest of our satchels, cut from full-grain suede with brass hardware. Built to be carried by the day and kept for the decade.",
     category: "Satchels",
-    images: ["/images/products/sade-satchel.webp"],
+    images: ["/images/products/sade-satchel.jpg"],
     rating: 4.9,
     stock: 4,
   },
@@ -61,7 +61,7 @@ export const products = [
     description:
       "A softer take on the classic bucket, in warm camel suede with a cinched drawstring mouth. Your effortless everyday carry.",
     category: "Bucket Bags",
-    images: ["/images/products/ayo-bucket-bag.webp"],
+    images: ["/images/products/ayo-bucket-bag.jpg"],
     rating: 4.4,
     stock: 10,
   },
@@ -72,7 +72,7 @@ export const products = [
     description:
       "A gentle crescent hobo in sand suede with an exterior slip pocket. Quietly practical, softly worn.",
     category: "Hobo Bags",
-    images: ["/images/products/dara-hobo-bag.webp"],
+    images: ["/images/products/dara-hobo-bag.jpg"],
     rating: 4.3,
     stock: 15,
   },
@@ -83,7 +83,7 @@ export const products = [
     description:
       "A compact suede clutch with a front fold and clean top line. The little thing that finishes an outfit.",
     category: "Clutches",
-    images: ["/images/products/efe-clutch.webp"],
+    images: ["/images/products/efe-clutch.jpg"],
     rating: 4.5,
     stock: 0,
   },
@@ -94,7 +94,7 @@ export const products = [
     description:
       "All the structure of our satchel, scaled down to the essentials. Petite, precise, easy to love.",
     category: "Satchels",
-    images: ["/images/products/bisi-mini-satchel.webp"],
+    images: ["/images/products/bisi-mini-satchel.jpg"],
     rating: 4.6,
     stock: 8,
   },
@@ -105,7 +105,7 @@ export const products = [
     description:
       "A small bucket with just enough room, finished in soft espresso suede. Made for hands-free, light-carry days.",
     category: "Bucket Bags",
-    images: ["/images/products/lola-mini-bucket.webp"],
+    images: ["/images/products/lola-mini-bucket.jpg"],
     rating: 4.4,
     stock: 11,
   },
@@ -116,7 +116,7 @@ export const products = [
     description:
       "An oversized slouch hobo in heavyweight suede that drapes beautifully. Comfort you can wear on your shoulder.",
     category: "Hobo Bags",
-    images: ["/images/products/temi-slouch-hobo.webp"],
+    images: ["/images/products/temi-slouch-hobo.jpg"],
     rating: 4.7,
     stock: 5,
   },
@@ -127,7 +127,7 @@ export const products = [
     description:
       "A slim suede pouch-clutch that slips inside a larger bag or carries alone. Proof that small can still be considered.",
     category: "Clutches",
-    images: ["/images/products/yemi-pouch-clutch.webp"],
+    images: ["/images/products/yemi-pouch-clutch.jpg"],
     rating: 4.3,
     stock: 20,
   },
