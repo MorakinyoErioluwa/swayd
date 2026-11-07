@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Hero() {
   return (
-    <section className="relative min-h-[74vh] overflow-hidden md:min-h-[92vh]">
+    <section className="relative min-h-[55vh] overflow-hidden md:min-h-[80vh]">
 
       {/* Hero image */}
       <img
@@ -12,11 +12,8 @@ function Hero() {
         className="absolute inset-0 h-full w-full object-cover object-[center_40%] md:object-center"
       />
 
-      {/* Scrim */}
-      <div className="absolute inset-0 bg-deep-brown/40 md:bg-deep-brown/35"></div>
-
       {/* Soft overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-deep-brown/60 via-deep-brown/10 to-deep-brown/60"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-brown/40 to-deep-brown/85"></div>
 
       {/* Hero content */}
       <div
@@ -24,18 +21,21 @@ function Hero() {
           relative
           z-10
           flex
-          min-h-[74vh]
+          min-h-[55vh]
+          flex-col
           items-center
-          justify-center
+          justify-end
           px-6
-          py-16
+          pb-10
           text-center
-          md:min-h-[92vh]
-          md:px-10
-          md:py-24
+          text-shadow-[0_1px_3px_rgba(36,25,20,0.45)]
+          md:min-h-[80vh]
+          md:flex-row
+          md:justify-center
+          md:pb-24
         "
       >
-        <div className="max-w-3xl text-cream">
+        <div className="max-w-3xl w-full text-cream">
 
           {/* Eyebrow */}
           <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.3em] text-cream md:mb-6 md:text-xs">
@@ -54,18 +54,18 @@ function Hero() {
           </p>
 
           {/* Buttons */}
-          <div className="mt-8 flex flex-wrap justify-center gap-3 md:mt-10">
+          <div className="mt-8 flex flex-col gap-3 md:mt-10 md:flex-row md:justify-center">
 
             <Link
               to="/shop"
-              className="inline-flex items-center justify-center rounded-md bg-cream px-6 py-3.5 text-xs font-medium text-deep-brown transition-colors hover:bg-beige md:px-7 md:py-4 md:text-sm"
+              className="inline-flex w-full items-center justify-center rounded-md bg-cream px-6 py-3.5 text-xs font-medium text-deep-brown transition-colors hover:bg-beige md:w-auto md:px-7 md:py-4 md:text-sm"
             >
               Shop the collection
             </Link>
 
             <a
               href="#story"
-              className="inline-flex items-center justify-center rounded-md border border-cream/80 px-6 py-3.5 text-xs font-medium text-cream transition-colors hover:bg-cream/10 md:px-7 md:py-4 md:text-sm"
+              className="inline-flex w-full items-center justify-center rounded-md border border-cream/80 px-6 py-3.5 text-xs font-medium text-cream transition-colors hover:bg-cream/10 md:w-auto md:px-7 md:py-4 md:text-sm"
             >
               Our story
             </a>

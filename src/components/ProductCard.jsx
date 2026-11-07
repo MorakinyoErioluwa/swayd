@@ -52,7 +52,7 @@ function ProductCard({ product }) {
         {/* Add to cart */}
         <button
           onClick={() => addToCart(product, 1)}
-          className="group/btn mt-auto flex w-full items-center justify-between rounded-md bg-coffee px-4 py-2.5 text-xs font-medium uppercase tracking-[0.12em] text-cream transition-colors duration-300 hover:bg-deep-brown md:px-6 md:py-3"
+          className="group/btn mt-auto flex w-full items-center justify-between rounded-md bg-camel px-4 py-2.5 text-xs font-medium uppercase tracking-[0.12em] text-deep-brown transition-colors duration-300 hover:bg-coffee hover:text-cream md:px-6 md:py-3"
         >
           <span>Add to cart</span>
 
