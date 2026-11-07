@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../services/productService";
 import ProductCard from "../components/ProductCard";
-import ScrollReveal from "../components/ScrollReveal";
 
 function Shop() {
   const [products, setProducts] = useState([]);
@@ -117,110 +116,96 @@ function Shop() {
         {/* Page heading */}
         <div className="max-w-2xl">
 
-          <ScrollReveal delay={100}>
-            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
-              SwayD Collection
-            </p>
-          </ScrollReveal>
+          <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
+            SwayD Collection
+          </p>
 
-          <ScrollReveal delay={200}>
-            <h1 className="mt-3 font-display text-5xl font-medium leading-none tracking-tight text-deep-brown md:text-6xl">
-              Shop the collection
-            </h1>
-          </ScrollReveal>
+          <h1 className="mt-3 font-display text-5xl font-medium leading-none tracking-tight text-deep-brown md:text-6xl">
+            Shop the collection
+          </h1>
 
-          <ScrollReveal delay={300}>
-            <p className="mt-5 max-w-xl text-sm leading-6 text-coffee md:text-base">
-              Explore pieces designed to move with you, from everyday
-              essentials to statement bags.
-            </p>
-          </ScrollReveal>
+          <p className="mt-5 max-w-xl text-sm leading-6 text-coffee md:text-base">
+            Explore pieces designed to move with you, from everyday
+            essentials to statement bags.
+          </p>
 
         </div>
 
         {/* Filters */}
-        <ScrollReveal delay={400}>
-          <div className="mt-10 grid gap-3 md:grid-cols-[1.5fr_1fr_1fr]">
+        <div className="mt-10 grid gap-3 md:grid-cols-[1.5fr_1fr_1fr]">
 
-            {/* Search */}
-            <input
-              type="text"
-              placeholder="Search bags..."
-              value={searchTerm}
-              onChange={(event) => setSearchTerm(event.target.value)}
-              className="w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors placeholder:text-coffee/50 focus:border-camel"
-            />
+          {/* Search */}
+          <input
+            type="text"
+            placeholder="Search bags..."
+            value={searchTerm}
+            onChange={(event) => setSearchTerm(event.target.value)}
+            className="w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors placeholder:text-coffee/50 focus:border-camel"
+          />
 
-            {/* Category */}
-            <select
-              value={selectedCategory}
-              onChange={(event) => setSelectedCategory(event.target.value)}
-              className="w-full rounded-md border border-beige bg-cream px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
-            >
-              <option value="">All categories</option>
+          {/* Category */}
+          <select
+            value={selectedCategory}
+            onChange={(event) => setSelectedCategory(event.target.value)}
+            className="w-full rounded-md border border-beige bg-cream px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
+          >
+            <option value="">All categories</option>
 
-              {categories.map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </select>
+            {categories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
 
-            {/* Sort */}
-            <select
-              value={sortOption}
-              onChange={(event) => setSortOption(event.target.value)}
-              className="w-full rounded-md border border-beige bg-cream px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
-            >
-              <option value="">Sort by</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="name-az">Name: A to Z</option>
-              <option value="name-za">Name: Z to A</option>
-            </select>
+          {/* Sort */}
+          <select
+            value={sortOption}
+            onChange={(event) => setSortOption(event.target.value)}
+            className="w-full rounded-md border border-beige bg-cream px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
+          >
+            <option value="">Sort by</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name-az">Name: A to Z</option>
+            <option value="name-za">Name: Z to A</option>
+          </select>
 
-          </div>
-        </ScrollReveal>
+        </div>
 
         {/* Product count */}
-        <ScrollReveal delay={500}>
-          <div className="mt-8">
-            <p className="text-xs uppercase tracking-[0.15em] text-coffee/70">
-              {filteredProducts.length}{" "}
-              {filteredProducts.length === 1 ? "piece" : "pieces"}
-            </p>
-          </div>
-        </ScrollReveal>
+        <div className="mt-8">
+          <p className="text-xs uppercase tracking-[0.15em] text-coffee/70">
+            {filteredProducts.length}{" "}
+            {filteredProducts.length === 1 ? "piece" : "pieces"}
+          </p>
+        </div>
 
         {/* Products */}
         <div className="mt-6">
           {filteredProducts.length === 0 ? (
-            <ScrollReveal delay={600}>
-              <div className="py-20 text-center">
+            <div className="py-20 text-center">
 
-                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
-                  No matches
-                </p>
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
+                No matches
+              </p>
 
-                <h2 className="mt-3 font-display text-3xl font-medium leading-none tracking-tight text-deep-brown md:text-4xl">
-                  Nothing found
-                </h2>
+              <h2 className="mt-3 font-display text-3xl font-medium leading-none tracking-tight text-deep-brown md:text-4xl">
+                Nothing found
+              </h2>
 
-                <p className="mx-auto mt-4 max-w-md text-sm leading-6 text-coffee">
-                  Try adjusting your search or category filter.
-                </p>
+              <p className="mx-auto mt-4 max-w-md text-sm leading-6 text-coffee">
+                Try adjusting your search or category filter.
+              </p>
 
-              </div>
-            </ScrollReveal>
+            </div>
           ) : (
             <div className="grid grid-cols-2 gap-x-4 gap-y-12 md:grid-cols-4 md:gap-x-6 md:gap-y-16">
-              {filteredProducts.map((product, index) => (
-                <ScrollReveal
+              {filteredProducts.map((product) => (
+                <ProductCard
                   key={product.id}
-                  delay={100 + index * 80}
-                >
-                  <ProductCard product={product} />
-                </ScrollReveal>
+                  product={product}
+                />
               ))}
             </div>
           )}

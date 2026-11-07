@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import ScrollReveal from "../components/ScrollReveal";
+import { formatPrice } from "../utils/format";
 
 function Checkout() {
   const { cart, clearCart } = useContext(CartContext);
@@ -43,39 +44,29 @@ function Checkout() {
       <main className="min-h-screen bg-cream px-6 py-24">
         <div className="mx-auto max-w-xl text-center">
 
-          <ScrollReveal delay={100}>
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-beige text-xl text-deep-brown">
-              ✓
-            </div>
-          </ScrollReveal>
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-beige text-xl text-deep-brown">
+            ✓
+          </div>
 
-          <ScrollReveal delay={200}>
-            <p className="mt-8 text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
-              Thank you
-            </p>
-          </ScrollReveal>
+          <p className="mt-8 text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
+            Thank you
+          </p>
 
-          <ScrollReveal delay={300}>
-            <h1 className="mt-4 font-display text-5xl font-medium leading-none tracking-tight text-deep-brown">
-              Order placed successfully
-            </h1>
-          </ScrollReveal>
+          <h1 className="mt-4 font-display text-5xl font-medium leading-none tracking-tight text-deep-brown">
+            Order placed successfully
+          </h1>
 
-          <ScrollReveal delay={400}>
-            <p className="mt-5 text-sm leading-6 text-coffee">
-              Thank you for shopping with SwayD. Your order has been received.
-            </p>
-          </ScrollReveal>
+          <p className="mt-5 text-sm leading-6 text-coffee">
+            Thank you for shopping with SwayD. Your order has been received.
+          </p>
 
-          <ScrollReveal delay={500}>
-            <Link
-              to="/shop"
-              className="mt-8 inline-flex items-center gap-3 rounded-md bg-coffee px-6 py-3 text-xs font-medium uppercase tracking-[0.14em] text-cream transition-colors duration-300 hover:bg-deep-brown"
-            >
-              Continue shopping
-              <span className="text-base">→</span>
-            </Link>
-          </ScrollReveal>
+          <Link
+            to="/shop"
+            className="mt-8 inline-flex items-center gap-3 rounded-md bg-coffee px-6 py-3 text-xs font-medium uppercase tracking-[0.14em] text-cream transition-colors duration-300 hover:bg-deep-brown"
+          >
+            Continue shopping
+            <span className="text-base">→</span>
+          </Link>
 
         </div>
       </main>
@@ -87,33 +78,25 @@ function Checkout() {
       <main className="min-h-screen bg-cream px-6 py-24">
         <div className="mx-auto max-w-xl text-center">
 
-          <ScrollReveal delay={100}>
-            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
-              Checkout
-            </p>
-          </ScrollReveal>
+          <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
+            Checkout
+          </p>
 
-          <ScrollReveal delay={200}>
-            <h1 className="mt-4 font-display text-5xl font-medium leading-none tracking-tight text-deep-brown">
-              Your bag is empty
-            </h1>
-          </ScrollReveal>
+          <h1 className="mt-4 font-display text-5xl font-medium leading-none tracking-tight text-deep-brown">
+            Your bag is empty
+          </h1>
 
-          <ScrollReveal delay={300}>
-            <p className="mt-5 text-sm leading-6 text-coffee">
-              Add something to your bag before continuing to checkout.
-            </p>
-          </ScrollReveal>
+          <p className="mt-5 text-sm leading-6 text-coffee">
+            Add something to your bag before continuing to checkout.
+          </p>
 
-          <ScrollReveal delay={400}>
-            <Link
-              to="/shop"
-              className="mt-8 inline-flex items-center gap-3 rounded-md bg-coffee px-6 py-3 text-xs font-medium uppercase tracking-[0.14em] text-cream transition-colors duration-300 hover:bg-deep-brown"
-            >
-              Shop bags
-              <span className="text-base">→</span>
-            </Link>
-          </ScrollReveal>
+          <Link
+            to="/shop"
+            className="mt-8 inline-flex items-center gap-3 rounded-md bg-coffee px-6 py-3 text-xs font-medium uppercase tracking-[0.14em] text-cream transition-colors duration-300 hover:bg-deep-brown"
+          >
+            Shop bags
+            <span className="text-base">→</span>
+          </Link>
 
         </div>
       </main>
@@ -126,17 +109,13 @@ function Checkout() {
 
         {/* Heading */}
         <div>
-          <ScrollReveal delay={100}>
-            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
-              SwayD Checkout
-            </p>
-          </ScrollReveal>
+          <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel md:text-xs">
+            SwayD Checkout
+          </p>
 
-          <ScrollReveal delay={200}>
-            <h1 className="mt-3 font-display text-5xl font-medium leading-none tracking-tight text-deep-brown md:text-6xl">
-              Complete your order
-            </h1>
-          </ScrollReveal>
+          <h1 className="mt-3 font-display text-5xl font-medium leading-none tracking-tight text-deep-brown md:text-6xl">
+            Complete your order
+          </h1>
         </div>
 
         <form
@@ -147,89 +126,87 @@ function Checkout() {
           {/* Customer details */}
           <div>
 
-            <ScrollReveal delay={300}>
-              <div className="py-8">
+            <div className="py-8">
 
-                <h2 className="font-display text-3xl font-medium text-deep-brown">
-                  Delivery details
-                </h2>
+              <h2 className="font-display text-3xl font-medium text-deep-brown">
+                Delivery details
+              </h2>
 
-                <div className="mt-8 grid gap-5 md:grid-cols-2">
+              <div className="mt-8 grid gap-5 md:grid-cols-2">
 
-                  <div className="md:col-span-2">
-                    <label className="text-xs uppercase tracking-[0.12em] text-coffee">
-                      Full name
-                    </label>
+                <div className="md:col-span-2">
+                  <label className="text-xs uppercase tracking-[0.12em] text-coffee">
+                    Full name
+                  </label>
 
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
-                    />
-                  </div>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
+                  />
+                </div>
 
-                  <div>
-                    <label className="text-xs uppercase tracking-[0.12em] text-coffee">
-                      Email
-                    </label>
+                <div>
+                  <label className="text-xs uppercase tracking-[0.12em] text-coffee">
+                    Email
+                  </label>
 
-                    <input
-                      type="email" name="email" value={formData.email} onChange={handleChange} required
-                      className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
-                    />
-                  </div>
+                  <input
+                    type="email" name="email" value={formData.email} onChange={handleChange} required
+                    className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
+                  />
+                </div>
 
-                  <div>
-                    <label className="text-xs uppercase tracking-[0.12em] text-coffee">
-                      Phone
-                    </label>
+                <div>
+                  <label className="text-xs uppercase tracking-[0.12em] text-coffee">
+                    Phone
+                  </label>
 
-                    <input
-                      type="tel" name="phone" value={formData.phone} onChange={handleChange} required
-                      className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
-                    />
-                  </div>
+                  <input
+                    type="tel" name="phone" value={formData.phone} onChange={handleChange} required
+                    className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
+                  />
+                </div>
 
-                  <div className="md:col-span-2">
-                    <label className="text-xs uppercase tracking-[0.12em] text-coffee">
-                      Address
-                    </label>
+                <div className="md:col-span-2">
+                  <label className="text-xs uppercase tracking-[0.12em] text-coffee">
+                    Address
+                  </label>
 
-                    <input
-                      type="text" name="address" value={formData.address} onChange={handleChange} required
-                      className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
-                    />
-                  </div>
+                  <input
+                    type="text" name="address" value={formData.address} onChange={handleChange} required
+                    className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
+                  />
+                </div>
 
-                  <div>
-                    <label className="text-xs uppercase tracking-[0.12em] text-coffee">
-                      City
-                    </label>
+                <div>
+                  <label className="text-xs uppercase tracking-[0.12em] text-coffee">
+                    City
+                  </label>
 
-                    <input
-                      type="text" name="city" value={formData.city} onChange={handleChange} required
-                      className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
-                    />
-                  </div>
+                  <input
+                    type="text" name="city" value={formData.city} onChange={handleChange} required
+                    className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
+                  />
+                </div>
 
-                  <div>
-                    <label className="text-xs uppercase tracking-[0.12em] text-coffee">
-                      State
-                    </label>
+                <div>
+                  <label className="text-xs uppercase tracking-[0.12em] text-coffee">
+                    State
+                  </label>
 
-                    <input
-                      type="text" name="state" value={formData.state} onChange={handleChange} required
-                      className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
-                    />
-                  </div>
-
+                  <input
+                    type="text" name="state" value={formData.state} onChange={handleChange} required
+                    className="mt-2 w-full rounded-md border border-beige bg-transparent px-4 py-3 text-sm text-deep-brown outline-none transition-colors focus:border-camel"
+                  />
                 </div>
 
               </div>
-            </ScrollReveal>
+
+            </div>
 
             {/* Demo payment notice */}
             <ScrollReveal delay={400}>
@@ -271,7 +248,7 @@ function Checkout() {
                     </div>
 
                     <p className="text-sm text-deep-brown">
-                      ${(item.price * item.quantity).toFixed(2)}
+                      {formatPrice(item.price * item.quantity)}
                     </p>
                   </div>
                 ))}
@@ -284,10 +261,14 @@ function Checkout() {
                   </span>
 
                   <span className="font-medium text-deep-brown">
-                    ${subtotal.toFixed(2)}
+                    {formatPrice(subtotal)}
                   </span>
                 </div>
               </div>
+
+              <p className="mt-3 text-xs leading-5 text-coffee/70">
+                Shipping: calculated after you place your order
+              </p>
 
               <button
                 type="submit"

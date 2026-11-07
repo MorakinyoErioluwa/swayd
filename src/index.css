@@ -23,3 +23,10 @@ body {
   color: var(--color-deep-brown);
   font-family: var(--font-sans);
 }
+
+@layer base {
+  :where(a, button, input, select, textarea):focus-visible {
+    outline: 2px solid var(--color-camel);
+    outline-offset: 2px;
+  }
+}

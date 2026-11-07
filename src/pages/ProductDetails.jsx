@@ -4,6 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import { getProductById } from "../services/productService";
 import { CartContext } from "../context/CartContext";
 import ScrollReveal from "../components/ScrollReveal";
+import { formatPrice } from "../utils/format";
+import { handleImageError } from "../utils/images";
 
 function ProductDetails() {
     const { id } = useParams();
@@ -56,148 +58,131 @@ function ProductDetails() {
             <div className="mx-auto max-w-7xl">
 
                 {/* Breadcrumb */}
-                <ScrollReveal delay={100}>
-                    <nav className="mb-8 text-xs text-coffee/70">
-                        <Link
-                            to="/"
-                            className="transition-opacity hover:opacity-60"
-                        >
-                            Home
-                        </Link>
+                <nav className="mb-8 text-xs text-coffee/70">
+                    <Link
+                        to="/"
+                        className="transition-opacity hover:opacity-60"
+                    >
+                        Home
+                    </Link>
 
-                        <span className="mx-2">/</span>
+                    <span className="mx-2">/</span>
 
-                        <Link
-                            to="/shop"
-                            className="transition-opacity hover:opacity-60"
-                        >
-                            Shop
-                        </Link>
+                    <Link
+                        to="/shop"
+                        className="transition-opacity hover:opacity-60"
+                    >
+                        Shop
+                    </Link>
 
-                        <span className="mx-2">/</span>
+                    <span className="mx-2">/</span>
 
-                        <span className="text-deep-brown">
-                            {product.title}
-                        </span>
-                    </nav>
-                </ScrollReveal>
+                    <span className="text-deep-brown">
+                        {product.title}
+                    </span>
+                </nav>
 
                 {/* Product */}
                 <div className="grid gap-10 md:grid-cols-2 md:gap-14 lg:gap-20">
 
                     {/* Product image */}
-                    <ScrollReveal delay={200}>
-                        <div className="group aspect-[4/5] overflow-hidden rounded-sm bg-beige">
-                            <img
-                                src={product.images[0]}
-                                alt={product.title}
-                                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
-                        </div>
-                    </ScrollReveal>
+                    <div className="group aspect-[4/5] overflow-hidden rounded-sm bg-beige">
+                        <img
+                            src={product.images[0]}
+                            alt={product.title}
+                            onError={handleImageError}
+                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                    </div>
 
                     {/* Product information */}
                     <div className="flex flex-col justify-center">
 
-                        <ScrollReveal delay={300}>
-                            <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel">
-                                SwayD Collection
-                            </p>
-                        </ScrollReveal>
+                        <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-camel">
+                            SwayD Collection
+                        </p>
 
-                        <ScrollReveal delay={400}>
-                            <h1 className="mt-3 font-display text-4xl font-medium leading-none tracking-tight text-deep-brown md:text-5xl lg:text-6xl">
-                                {product.title}
-                            </h1>
-                        </ScrollReveal>
+                        <h1 className="mt-3 font-display text-4xl font-medium leading-none tracking-tight text-deep-brown md:text-5xl lg:text-6xl">
+                            {product.title}
+                        </h1>
 
-                        <ScrollReveal delay={500}>
-                            <p className="mt-5 text-lg text-coffee">
-                                ${product.price}
-                            </p>
-                        </ScrollReveal>
+                        <p className="mt-5 text-lg text-coffee">
+                            {formatPrice(product.price)}
+                        </p>
 
-                        <ScrollReveal delay={600}>
-                            <p className="mt-7 max-w-xl text-sm leading-7 text-coffee/85 md:text-base">
-                                {product.description}
-                            </p>
-                        </ScrollReveal>
+                        <p className="mt-7 max-w-xl text-sm leading-7 text-coffee/85 md:text-base">
+                            {product.description}
+                        </p>
 
                         {/* Product details */}
-                        <ScrollReveal delay={700}>
-                            <div className="mt-7 space-y-2 text-xs text-coffee/75">
-                                <p>
-                                    Rating: {product.rating}
-                                </p>
+                        <div className="mt-7 space-y-2 text-xs text-coffee/75">
+                            <p>
+                                Rating: {product.rating}
+                            </p>
 
-                                <p>
-                                    {product.stock > 0
-                                        ? `${product.stock} available`
-                                        : "Out of stock"}
-                                </p>
-                            </div>
-                        </ScrollReveal>
+                            <p>
+                                {product.stock > 0
+                                    ? `${product.stock} available`
+                                    : "Out of stock"}
+                            </p>
+                        </div>
 
                         {/* Quantity */}
-                        <ScrollReveal delay={800}>
-                            <div className="mt-8">
+                        <div className="mt-8">
 
-                                <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.2em] text-coffee">
-                                    Quantity
-                                </p>
+                            <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.2em] text-coffee">
+                                Quantity
+                            </p>
 
-                                <div className="flex w-fit items-center rounded-md border border-beige bg-cream">
+                            <div className="flex w-fit items-center rounded-md border border-beige bg-cream">
 
-                                    <button
-                                        type="button"
-                                        onClick={() =>
-                                            setQuantity(
-                                                Math.max(1, quantity - 1)
-                                            )
-                                        }
-                                        className="flex h-11 w-11 items-center justify-center text-lg text-deep-brown transition-colors hover:bg-beige/40"
-                                        aria-label="Decrease quantity"
-                                    >
-                                        −
-                                    </button>
+                                <button
+                                    type="button"
+                                    onClick={() =>
+                                        setQuantity(
+                                            Math.max(1, quantity - 1)
+                                        )
+                                    }
+                                    className="flex h-11 w-11 items-center justify-center text-lg text-deep-brown transition-colors hover:bg-beige/40"
+                                    aria-label="Decrease quantity"
+                                >
+                                    −
+                                </button>
 
-                                    <span className="flex h-11 min-w-10 items-center justify-center text-sm">
-                                        {quantity}
-                                    </span>
+                                <span className="flex h-11 min-w-10 items-center justify-center text-sm">
+                                    {quantity}
+                                </span>
 
-                                    <button
-                                        type="button"
-                                        onClick={() =>
-                                            setQuantity(quantity + 1)
-                                        }
-                                        className="flex h-11 w-11 items-center justify-center text-lg text-deep-brown transition-colors hover:bg-beige/40"
-                                        aria-label="Increase quantity"
-                                    >
-                                        +
-                                    </button>
+                                <button
+                                    type="button"
+                                    onClick={() =>
+                                        setQuantity(quantity + 1)
+                                    }
+                                    className="flex h-11 w-11 items-center justify-center text-lg text-deep-brown transition-colors hover:bg-beige/40"
+                                    aria-label="Increase quantity"
+                                >
+                                    +
+                                </button>
 
-                                </div>
                             </div>
-                        </ScrollReveal>
+                        </div>
 
                         {/* Add to cart */}
-                        <ScrollReveal delay={900}>
-                            <button
-                                type="button"
-                                onClick={handleAddToCart}
-                                className="mt-6 flex w-full items-center justify-between rounded-md bg-coffee px-6 py-3 text-xs font-medium uppercase tracking-[0.14em] text-cream transition-colors duration-300 hover:bg-deep-brown"
-                            >
-                                <span>
-                                    {addedToCart
-                                        ? "✓ Added to bag"
-                                        : "Add to bag"}
-                                </span>
+                        <button
+                            type="button"
+                            onClick={handleAddToCart}
+                            className="mt-6 flex w-full items-center justify-between rounded-md bg-coffee px-6 py-3 text-xs font-medium uppercase tracking-[0.14em] text-cream transition-colors duration-300 hover:bg-deep-brown"
+                        >
+                            <span>
+                                {addedToCart
+                                    ? "✓ Added to bag"
+                                    : "Add to bag"}
+                            </span>
 
-                                <span className="text-base">
-                                    →
-                                </span>
-                            </button>
-                        </ScrollReveal>
+                            <span className="text-base">
+                                →
+                            </span>
+                        </button>
 
                     </div>
                 </div>

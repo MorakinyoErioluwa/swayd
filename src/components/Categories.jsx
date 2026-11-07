@@ -1,25 +1,26 @@
 import { Link } from "react-router-dom";
 import ScrollReveal from "./ScrollReveal";
+import { handleImageError } from "../utils/images";
 
 function Categories({ products }) {
   const categories = [
     {
-      name: "Shoulder Bags",
-      description: "Easy silhouettes for everyday movement.",
+      name: "Satchels",
+      description: "Structured shapes for everyday carrying.",
       image: products[0]?.images[0],
     },
     {
-      name: "Tote Bags",
+      name: "Bucket Bags",
       description: "Roomy pieces for everything you carry.",
       image: products[1]?.images[0],
     },
     {
-      name: "Crossbody Bags",
+      name: "Hobo Bags",
       description: "Hands-free shapes made to move with you.",
       image: products[2]?.images[0],
     },
     {
-      name: "Mini Bags",
+      name: "Clutches",
       description: "Small pieces with just enough room.",
       image: products[3]?.images[0],
     },
@@ -69,6 +70,7 @@ function Categories({ products }) {
                   <img
                     src={category.image}
                     alt={category.name}
+                    onError={handleImageError}
                     className="
                       absolute
                       inset-0

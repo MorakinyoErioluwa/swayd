@@ -2,6 +2,8 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { formatPrice } from "../utils/format";
+import { handleImageError } from "../utils/images";
 
 function ProductCard({ product }) {
   const { addToCart } = useContext(CartContext);
@@ -17,6 +19,7 @@ function ProductCard({ product }) {
           <img
             src={product.images[0]}
             alt={product.title}
+            onError={handleImageError}
             className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
 
@@ -42,7 +45,7 @@ function ProductCard({ product }) {
           </Link>
 
           <p className="shrink-0 text-sm text-coffee">
-            ${product.price}
+            {formatPrice(product.price)}
           </p>
         </div>
 

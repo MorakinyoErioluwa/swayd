@@ -1,7 +1,6 @@
 import { useState, useContext, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
-import ScrollReveal from "./ScrollReveal";
 
 const desktopLinkClass = ({ isActive }) =>
   `text-sm transition-colors ${
@@ -103,42 +102,34 @@ function Navbar() {
       <div className="relative z-50 mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-10 lg:px-12">
 
         {/* Logo */}
-        <ScrollReveal delay={0}>
-          <Link
-            to="/"
-            onClick={closeMenu}
-            className="font-display text-3xl font-medium tracking-tight text-deep-brown"
-          >
-            SwayD
-          </Link>
-        </ScrollReveal>
+        <Link
+          to="/"
+          onClick={closeMenu}
+          className="font-display text-3xl font-medium tracking-tight text-deep-brown"
+        >
+          SwayD
+        </Link>
 
         {/* Desktop navigation */}
         <div className="hidden items-center gap-9 md:flex">
 
-          <ScrollReveal delay={100}>
-            <NavLink
-              to="/"
-              end
-              className={desktopLinkClass}
-            >
-              Home
-            </NavLink>
-          </ScrollReveal>
+          <NavLink
+            to="/"
+            end
+            className={desktopLinkClass}
+          >
+            Home
+          </NavLink>
 
-          <ScrollReveal delay={150}>
-            <NavLink
-              to="/shop"
-              className={desktopLinkClass}
-            >
-              Shop
-            </NavLink>
-          </ScrollReveal>
+          <NavLink
+            to="/shop"
+            className={desktopLinkClass}
+          >
+            Shop
+          </NavLink>
 
           {/* Cart */}
-          <ScrollReveal delay={200}>
-            <CartLink totalItems={totalItems} onClick={closeMenu} />
-          </ScrollReveal>
+          <CartLink totalItems={totalItems} onClick={closeMenu} />
 
         </div>
 
@@ -146,46 +137,23 @@ function Navbar() {
         <div className="flex items-center gap-2 md:hidden">
 
           {/* Mobile cart */}
-          <ScrollReveal delay={100}>
-            <CartLink totalItems={totalItems} onClick={closeMenu} />
-          </ScrollReveal>
+          <CartLink totalItems={totalItems} onClick={closeMenu} />
 
           {/* Menu button */}
-          <ScrollReveal delay={150}>
-            <button
-              type="button"
-              onClick={() => setIsMenuOpen((current) => !current)}
-              className={`flex h-11 min-w-11 items-center justify-center gap-1.5 px-3 transition-colors ${
-                isMenuOpen
-                  ? "bg-cream/10 text-camel"
-                  : "text-deep-brown"
-              }`}
-              aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              {isMenuOpen ? (
-                <>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="h-6 w-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
-                    />
-                  </svg>
-
-                  <span className="text-[10px] font-medium uppercase tracking-[0.2em]">
-                    Close
-                  </span>
-                </>
-              ) : (
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((current) => !current)}
+            className={`flex h-11 min-w-11 items-center justify-center gap-1.5 px-3 transition-colors ${
+              isMenuOpen
+                ? "bg-cream/10 text-camel"
+                : "text-deep-brown"
+            }`}
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            {isMenuOpen ? (
+              <>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -197,12 +165,31 @@ function Navbar() {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                    d="M6 18 18 6M6 6l12 12"
                   />
                 </svg>
-              )}
-            </button>
-          </ScrollReveal>
+
+                <span className="text-[10px] font-medium uppercase tracking-[0.2em]">
+                  Close
+                </span>
+              </>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="h-6 w-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            )}
+          </button>
 
         </div>
       </div>

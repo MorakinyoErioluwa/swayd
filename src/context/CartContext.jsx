@@ -5,12 +5,12 @@ export const CartContext = createContext();
 export function CartProvider({children}) {
 
     const [cart, setCart] = useState( () => {
-        const savedCart = localStorage.getItem("swayd-cart");
+        const savedCart = localStorage.getItem("swayd-cart-v2");
         return savedCart ? JSON.parse(savedCart) : [];
     });
 
     useEffect(() => {
-        localStorage.setItem("swayd-cart", JSON.stringify(cart));
+        localStorage.setItem("swayd-cart-v2", JSON.stringify(cart));
     }, [cart]);
 
     function addToCart(product, quantity) {
