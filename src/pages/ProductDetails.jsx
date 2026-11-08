@@ -171,7 +171,7 @@ function ProductDetails() {
                         <button
                             type="button"
                             onClick={handleAddToCart}
-                            className="mt-6 flex w-full items-center justify-between rounded-md bg-camel px-6 py-3.5 text-xs font-medium uppercase tracking-[0.14em] text-deep-brown transition-colors duration-300 hover:bg-coffee hover:text-cream"
+                            className="mt-6 flex w-full items-center justify-between rounded-md bg-coffee px-6 py-3.5 text-xs font-medium uppercase tracking-[0.14em] text-cream transition-colors duration-300 hover:bg-deep-brown"
                         >
                             <span>
                                 {addedToCart
