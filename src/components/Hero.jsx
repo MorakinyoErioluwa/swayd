@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Hero() {
   return (
-    <section className="relative min-h-[55vh] overflow-hidden md:min-h-[80vh]">
+    <section className="relative h-[60vh] min-h-[420px] max-h-[560px] overflow-hidden md:h-[560px] md:min-h-0 md:max-h-[640px] lg:h-[620px]">
 
       {/* Hero image */}
       <img
@@ -20,7 +20,9 @@ function Hero() {
           relative
           z-10
           flex
-          min-h-[55vh]
+          h-[60vh]
+          min-h-[420px]
+          max-h-[560px]
           flex-col
           items-center
           justify-end
@@ -28,10 +30,13 @@ function Hero() {
           pb-10
           text-center
           text-shadow-[0_1px_3px_rgba(36,25,20,0.45)]
-          md:min-h-[80vh]
+          md:h-[560px]
+          md:min-h-0
+          md:max-h-[640px]
           md:flex-row
           md:justify-center
           md:pb-24
+          lg:h-[620px]
         "
       >
         <div className="max-w-3xl w-full text-cream">
