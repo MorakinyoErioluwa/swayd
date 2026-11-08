@@ -6,14 +6,13 @@ function Hero() {
 
       {/* Hero image */}
       <img
-        src="/hero.png"
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover object-[center_40%] md:object-center"
+        src="/brand-hero.jpg"
+        alt="Woman carrying a camel suede SwayD satchel"
+        className="absolute inset-0 h-full w-full object-cover object-[center_30%] md:object-center"
       />
 
       {/* Soft overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-brown/40 to-deep-brown/85"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-deep-brown/80"></div>
 
       {/* Hero content */}
       <div
