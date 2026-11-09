@@ -6,9 +6,9 @@ function Hero() {
 
       {/* Hero image */}
       <img
-        src="brandbrand.png"
-        alt="Woman carrying a camel suede SwayD satchel"
-        className="absolute inset-0 h-full w-full object-cover object-[center_30%] md:object-center"
+        src="/brand-hero.jpg"
+        alt="Camel suede SwayD hobo bag on cream linen beside an espresso cup"
+        className="absolute inset-0 h-full w-full object-cover object-[center_70%] md:object-[center_85%]"
       />
 
       {/* Soft overlay */}
