@@ -2,82 +2,55 @@ import { Link } from "react-router-dom";
 
 function Hero() {
   return (
-    <section className="relative h-[60vh] min-h-[420px] max-h-[560px] overflow-hidden md:h-[560px] md:min-h-0 md:max-h-[640px] lg:h-[620px]">
+    <section className="lg:grid lg:h-[620px] lg:max-h-[640px] lg:grid-cols-[1.1fr_0.9fr]">
 
-      {/* Hero image */}
+      {/* Photo — top on phones/tablets, right pane from lg up */}
       <img
         src="/brand-hero.jpg"
         alt="Camel suede SwayD hobo bag on cream linen beside an espresso cup"
-        className="absolute inset-0 h-full w-full object-cover object-[center_70%] md:object-[center_85%]"
+        className="order-1 h-[360px] w-full object-cover object-[35%_50%] sm:h-[440px] sm:object-[center_85%] lg:order-2 lg:h-full lg:object-[center_bottom]"
       />
 
-      {/* Soft overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-deep-brown/80"></div>
-
-      {/* Hero content */}
-      <div
-        className="
-          relative
-          z-10
-          flex
-          h-[60vh]
-          min-h-[420px]
-          max-h-[560px]
-          flex-col
-          items-center
-          justify-end
-          px-6
-          pb-10
-          text-center
-          text-shadow-[0_1px_3px_rgba(36,25,20,0.45)]
-          md:h-[560px]
-          md:min-h-0
-          md:max-h-[640px]
-          md:flex-row
-          md:justify-center
-          md:pb-24
-          lg:h-[620px]
-        "
-      >
-        <div className="max-w-3xl w-full text-cream">
+      {/* Text panel — below the photo on phones/tablets, left pane from lg up */}
+      <div className="order-2 bg-cream px-6 py-14 text-center lg:order-1 lg:flex lg:flex-col lg:items-center lg:justify-center lg:px-12 lg:text-left">
+        <div className="w-full max-w-xl">
 
           {/* Eyebrow */}
-          <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.3em] text-cream md:mb-6 md:text-xs">
+          <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-coffee md:text-xs">
             The SwayD collection
           </p>
 
-          {/* Main heading */}
-          <h1 className="font-display text-5xl font-medium leading-[0.92] tracking-tight sm:text-6xl md:text-7xl xl:text-8xl">
+          {/* Heading */}
+          <h1 className="mt-4 font-display text-4xl font-medium leading-[0.92] tracking-tight text-coffee sm:text-5xl lg:text-6xl xl:text-7xl">
             Bags made to move with you.
           </h1>
 
           {/* Description */}
-          <p className="mx-auto mt-6 max-w-md text-xs leading-6 text-cream md:mt-8 md:max-w-lg md:text-base md:leading-7">
+          <p className="mx-auto mt-5 max-w-md text-xs leading-6 text-coffee/90 lg:mt-6 lg:mx-0 md:max-w-lg md:text-base md:leading-7">
             Contemporary bags designed for everyday movement, effortless
             style, and everything you carry along the way.
           </p>
 
           {/* Buttons */}
-          <div className="mt-8 flex flex-col gap-3 md:mt-10 md:flex-row md:justify-center">
-
+          <div className="mt-8 flex w-full flex-col gap-3 lg:mt-10 lg:w-auto lg:flex-row">
             <Link
               to="/shop"
-              className="inline-flex w-full items-center justify-center rounded-md bg-cream px-6 py-3.5 text-xs font-medium text-deep-brown transition-colors hover:bg-beige md:w-auto md:px-7 md:py-4 md:text-sm"
+              className="inline-flex w-full items-center justify-center rounded-md bg-coffee px-6 py-3.5 text-xs font-medium text-cream transition-colors hover:bg-deep-brown lg:w-auto lg:px-7 lg:py-4 md:text-sm"
             >
               Shop the collection
             </Link>
 
             <a
               href="#story"
-              className="inline-flex w-full items-center justify-center rounded-md border border-cream/80 px-6 py-3.5 text-xs font-medium text-cream transition-colors hover:bg-cream/10 md:w-auto md:px-7 md:py-4 md:text-sm"
+              className="inline-flex w-full items-center justify-center rounded-md border border-coffee/80 px-6 py-3.5 text-xs font-medium text-coffee transition-colors hover:bg-coffee/10 lg:w-auto lg:px-7 lg:py-4 md:text-sm"
             >
               Our story
             </a>
-
           </div>
 
         </div>
       </div>
+
     </section>
   );
 }
