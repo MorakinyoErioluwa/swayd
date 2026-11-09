@@ -6,7 +6,7 @@ function Hero() {
 
       {/* Hero image */}
       <img
-        src="/brand-hero.jpg"
+        src="brandbrand.png"
         alt="Woman carrying a camel suede SwayD satchel"
         className="absolute inset-0 h-full w-full object-cover object-[center_30%] md:object-center"
       />
