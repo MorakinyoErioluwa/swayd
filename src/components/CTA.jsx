@@ -3,8 +3,8 @@ import ScrollReveal from "./ScrollReveal";
 
 function CTA() {
   return (
-    <section className="bg-beige px-6 py-24 md:py-28">
-      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
+    <section className="bg-beige px-6 py-20 md:py-28">
+      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-center md:gap-12">
 
         {/* Copy */}
         <ScrollReveal delay={100}>
@@ -41,7 +41,7 @@ function CTA() {
             <img
               src="/images/products/kemi-hobo-bag-cutout.webp"
               alt="Espresso suede SwayD bag with brass buckle"
-              className="aspect-[4/5] w-full object-contain drop-shadow-[0_18px_24px_rgba(36,25,20,0.25)] lg:mt-16"
+              className="aspect-[4/5] w-full object-contain drop-shadow-[0_18px_24px_rgba(36,25,20,0.25)] md:mt-16"
             />
           </ScrollReveal>
         </div>
