@@ -1,20 +1,28 @@
 # SwayD
 
-An e-commerce storefront for a suede handbag brand. 
+An e-commerce storefront for a suede handbag brand. Plus the Founder's initials
 
 **Live site:** [https://swayyd.vercel.app]
 
 ![SwayD on desktop](public/Screenshots/swayd_desktop.jpg)
 
+## Overview
+
+SwayD is a front-end e-commerce project built around a warm, editorial brand identity. It covers the full browsing-to-checkout journey: a landing page, a searchable shop, product detail pages, a persistent cart and a checkout form.
+
 ## Features
 
-- Home page with a hero, featured pieces, categories, brand story and a call to action
-- Shop page with search, category filter and price sorting
-- Product pages with a quantity selector and in-stock / out-of-stock states
-- Cart that persists between visits (localStorage) and a checkout flow
-- Prices in naira (NGN), formatted with `Intl.NumberFormat`
-- Sticky navbar with a full-screen mobile menu (closes on Escape, link tap and outside tap)
-- Visible keyboard focus styles and checked text contrast
+- **Landing page** with a hero, featured pieces, category cards, brand story and a call to action
+- **Shop** with search, category filter and price sorting
+- **Product pages** with a quantity selector and in-stock and out-of-stock states
+- **Cart** that persists between visits using localStorage, with line totals and a subtotal
+- **Checkout** with a form and an order summary (front-end only, no payment processing)
+- **Naira pricing** formatted with `Intl.NumberFormat("en-NG")`
+- **Navigation**: sticky navbar, full-screen mobile menu that closes on Escape, link tap and outside tap, and active route styling
+- **Accessibility**: visible keyboard focus styles, text contrast checked against WCAG AA, descriptive alt text and ARIA attributes on the menu
+- **Scroll reveal** animations below the fold
+
+
 
 ## Built with
 
@@ -22,18 +30,21 @@ An e-commerce storefront for a suede handbag brand.
 - Vite
 - Tailwind CSS v4 (design tokens defined in `@theme`)
 - react-router-dom
+- Context API for cart state
 
-## Design
+## Design system
 
-A warm suede palette with two typefaces: Cormorant Garamond for display text and DM Sans for the interface.
+A warm suede palette and two typefaces: Cormorant Garamond for display text and DM Sans for the interface.
 
-| Token | Hex |
-|---|---|
-| coffee | `#3b2923` |
-| cream | `#f7f2ea` |
-| beige | `#d8c7b0` |
-| camel | `#b58b62` |
-| deep-brown | `#241914` |
+| Token | Hex | Used for |
+|---|---|---|
+| coffee | `#3b2923` | Primary text and buttons |
+| cream | `#f7f2ea` | Page background |
+| beige | `#d8c7b0` | Panels and surfaces |
+| camel | `#b58b62` | Accents |
+| deep-brown | `#241914` | Footer and dark sections |
+
+Colours are registered as Tailwind v4 theme tokens (`bg-coffee`, `text-camel` and so on), so there are no arbitrary colour values in the components.
 
 ## Project structure
 
@@ -42,20 +53,11 @@ src/
   components/   Navbar, Hero, Categories, FeaturedProducts, ProductCard,
                 BrandStory, CTA, Footer, ScrollReveal
   pages/        Home, Shop, ProductDetails, Cart, Checkout
-  context/      CartContext (cart state and persistence)
-  services/     productService (reads the local catalog)
+  context/      CartContext (cart state and localStorage persistence)
+  services/     productService (async access to the product catalog)
   data/         products.js (12 products)
 public/
-  images/products/   product photos
-```
-
-## Run it locally
-
-```bash
-git clone [https]
-cd swayd
-npm install
-npm run dev
+  images/products/   product photography
 ```
 
 Other scripts: `npm run build` for a production build and `npm run lint` to lint.
