@@ -32,16 +32,16 @@ function CTA() {
         <div className="grid grid-cols-2 items-start gap-3 md:gap-4">
           <ScrollReveal delay={200}>
             <img
-              src="/images/products/temi-slouch-hobo.jpg"
+              src="/images/products/temi-slouch-hobo-cutout.webp"
               alt="Camel suede SwayD slouch hobo bag"
-              className="aspect-[4/5] w-full rounded-md object-cover"
+              className="aspect-[4/5] w-full object-contain drop-shadow-[0_18px_24px_rgba(36,25,20,0.25)]"
             />
           </ScrollReveal>
           <ScrollReveal delay={300}>
             <img
-              src="/images/products/kemi-hobo-bag.jpg"
+              src="/images/products/kemi-hobo-bag-cutout.webp"
               alt="Espresso suede SwayD bag with brass buckle"
-              className="aspect-[4/5] w-full rounded-md object-cover lg:mt-16"
+              className="aspect-[4/5] w-full object-contain drop-shadow-[0_18px_24px_rgba(36,25,20,0.25)] lg:mt-16"
             />
           </ScrollReveal>
         </div>
