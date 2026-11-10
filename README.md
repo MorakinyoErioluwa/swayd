@@ -1,16 +1,69 @@
-# React + Vite
+# SwayD
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+An e-commerce storefront for a suede handbag brand. 
 
-Currently, two official plugins are available:
+**Live site:** [https://swayyd.vercel.app]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![SwayD on desktop](docs/desktop.png)
+![SwayD on mobile](docs/mobile.png)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Home page with a hero, featured pieces, categories, brand story and a call to action
+- Shop page with search, category filter and price sorting
+- Product pages with a quantity selector and in-stock / out-of-stock states
+- Cart that persists between visits (localStorage) and a checkout flow
+- Prices in naira (NGN), formatted with `Intl.NumberFormat`
+- Sticky navbar with a full-screen mobile menu (closes on Escape, link tap and outside tap)
+- Visible keyboard focus styles and checked text contrast
 
-## Expanding the Oxlint configuration
+## Built with
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- React 19
+- Vite
+- Tailwind CSS v4 (design tokens defined in `@theme`)
+- react-router-dom
+
+## Design
+
+A warm suede palette with two typefaces: Cormorant Garamond for display text and DM Sans for the interface.
+
+| Token | Hex |
+|---|---|
+| coffee | `#3b2923` |
+| cream | `#f7f2ea` |
+| beige | `#d8c7b0` |
+| camel | `#b58b62` |
+| deep-brown | `#241914` |
+
+## Project structure
+
+```
+src/
+  components/   Navbar, Hero, Categories, FeaturedProducts, ProductCard,
+                BrandStory, CTA, Footer, ScrollReveal
+  pages/        Home, Shop, ProductDetails, Cart, Checkout
+  context/      CartContext (cart state and persistence)
+  services/     productService (reads the local catalog)
+  data/         products.js (12 products)
+public/
+  images/products/   product photos
+```
+
+## Run it locally
+
+```bash
+git clone []
+cd swayd
+npm install
+npm run dev
+```
+
+Other scripts: `npm run build` for a production build and `npm run lint` to lint.
+
+## Notes
+
+- The product catalog is local data in `src/data/products.js`. The service layer returns promises, so it can be pointed at a real API later without changing the components.
+
+
+
