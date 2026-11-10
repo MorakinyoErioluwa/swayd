@@ -4,8 +4,7 @@ An e-commerce storefront for a suede handbag brand.
 
 **Live site:** [https://swayyd.vercel.app]
 
-![SwayD on desktop](docs/desktop.png)
-![SwayD on mobile](docs/mobile.png)
+![SwayD on desktop](public/Screenshots/swayd_desktop.jpg)
 
 ## Features
 
@@ -53,7 +52,7 @@ public/
 ## Run it locally
 
 ```bash
-git clone []
+git clone [https]
 cd swayd
 npm install
 npm run dev
